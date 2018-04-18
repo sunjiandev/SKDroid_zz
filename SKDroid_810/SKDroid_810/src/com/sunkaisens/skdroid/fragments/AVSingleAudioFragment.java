@@ -13,6 +13,8 @@ import org.doubango.ngn.utils.NgnTimer;
 import org.doubango.ngn.utils.NgnUriUtils;
 import org.doubango.utils.MyLog;
 
+import android.app.ActivityManager;
+import android.app.ActivityManager.MemoryInfo;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -100,6 +102,8 @@ public class AVSingleAudioFragment extends BaseFragment implements
 		if (!isInit)
 			return null;
 
+		activityManager = (ActivityManager) getActivity().getSystemService(Context.ACTIVITY_SERVICE);
+		
 		GCThread gcThread = new GCThread();
 		timer = new Timer();
 		timer.schedule(gcThread, 0,10*1000);
@@ -269,6 +273,8 @@ public class AVSingleAudioFragment extends BaseFragment implements
 
 	private Timer timer;
 
+	private static ActivityManager activityManager;
+
 	
 
 	public void handlerPTTinfo(byte[] infoContent, long sessionId) {
@@ -330,6 +336,13 @@ public class AVSingleAudioFragment extends BaseFragment implements
 			// TODO Auto-generated method stub
 			Runtime.getRuntime().gc();
 			MyLog.d(TAG, "start gc");
+
+			
+			MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+			activityManager.getMemoryInfo(memoryInfo);
+			MyLog.d(TAG, "系统剩余可用内存"+(memoryInfo.availMem>>10)+"k");
+			MyLog.d(TAG, "系统是否处于低内存运行"+memoryInfo.lowMemory);
+			MyLog.d(TAG, "当系统内存低于"+memoryInfo.threshold+"时看成是低内存运行");
 		}
 	}
 	
