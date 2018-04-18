@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_greybg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pushinfo_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_squared"
+            android:padding="8dp"
+            android:text="@string/time"
+            android:textColor="@color/color_text1"
+            android:textSize="12sp" >
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            android:padding="10dp"
+            android:weightSum="2" >
+
+            <ImageView
+                android:id="@+id/pushinfo_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_push_image_large" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/pushinfo_item_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/pushinfo_item_image"
+                android:layout_centerHorizontal="true"
+                android:alpha="100"
+                android:background="@color/color_childbg_transparent"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="3dp"
+                 android:singleLine="true"
+                android:text="@string/dafault_push_title"
+                android:textColor="@color/color_text2"
+                android:textSize="20sp"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/pushinfo_item_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pushinfo_item_title"
+                android:layout_margin="3dp"
+                android:padding="3dp"
+                android:text="@string/content_brief"
+                android:textColor="@color/color_text1" >
+            </TextView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/pushinfo_last_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

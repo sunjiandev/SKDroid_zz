@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".Screens.ScreenTabHome" >
+
+    <RelativeLayout
+        android:id="@+id/taball"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/neterror"
+            android:layout_width="match_parent"
+            android:layout_height="30dip"
+            android:orientation="horizontal" 
+            android:background="@color/color_neterror"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/error_image"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="20dip"
+                android:background="#00000000"
+                android:layout_gravity="center|left"
+                android:contentDescription=""
+                android:src="@drawable/warn" />
+
+            <TextView
+                android:id="@+id/error_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:gravity="center"
+                android:textColor="@color/color_black"
+                android:text="@string/connect_failed_error" />
+        </LinearLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/tabhost_line"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_above="@+id/main_tab"
+            android:background="@color/color_text"
+            android:visibility="visible" />
+
+        <RadioGroup
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp" >
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/n_maintab_message"
+                android:text="@string/message"
+                android:textColor="@color/color_text"
+                android:textSize="14sp"/>
+
+            <RadioButton
+                android:id="@+id/radio_button0"
+                style="@style/main_tab_bottom"
+                android:checked="true"
+                android:drawableTop="@drawable/n_maintab_call"
+                android:text="@string/dialer"
+                android:textSize="14sp"
+                android:textColor="@color/color_text" />
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/n_maintab_contact"
+                android:text="@string/contact"
+                android:textColor="@color/color_text"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/n_maintab_me"
+                android:text="@string/me"
+                android:textColor="@color/color_text"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button4"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/n_maintab_gis"
+                android:text="@string/gis"
+                android:textColor="@color/color_text"
+                android:visibility="gone" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/main_tab"
+            android:layout_below="@id/neterror" />
+    </RelativeLayout>
+
+</TabHost>

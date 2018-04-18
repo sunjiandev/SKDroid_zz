@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_sel_green"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingBottom="2dp"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:paddingTop="10dip" >
+
+    <LinearLayout
+        android:id="@+id/itemimage_layout"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/login_head_bg"
+        android:orientation="vertical"
+        android:padding="1dp" >
+
+        <ImageView
+            android:id="@+id/itemimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/n_image_icon1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/right_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toRightOf="@id/itemimage_layout" >
+
+        <ImageButton
+            android:id="@+id/itembutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/transparent"
+            android:contentDescription="@string/string_startcall"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/n_call_audio" />
+
+        <TextView
+            android:id="@+id/itemname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/itembutton"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:gravity="left"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="19811208005"
+            android:textColor="@color/color_titleblack"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@+id/iteminterval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/itemname"
+            android:layout_marginTop="2dp"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:gravity="left"
+            android:marqueeRepeatLimit="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="@string/dafault_calling_time"
+            android:textColor="@color/color_darktext"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:id="@+id/itemtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/iteminterval"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:gravity="left"
+            android:marqueeRepeatLimit="1"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="@string/default_incoming_time"
+            android:textColor="@color/color_darktext"
+            android:textSize="12.0sp" />
+
+        <TextView
+            android:id="@+id/itemtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/iteminterval"
+            android:layout_marginRight="5dp"
+            android:focusable="false"
+            android:gravity="right"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="@string/default_calling_type"
+            android:textColor="@color/color_darktext"
+            android:textSize="12.0sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_text" />
+
+</RelativeLayout>

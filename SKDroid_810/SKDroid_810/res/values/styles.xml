@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Animations" />
+
+	<!-- PopDownMenu -->
+	<style name="Animations.PopDownMenu" />
+	
+	<style name="Animations.PopDownMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+	</style>
+	
+	<style name="Animations.PopDownMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+	</style>
+	
+	<style name="Animations.PopDownMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_top</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_bottom</item>
+	</style>
+	
+	<!-- PopUpMenu -->
+	<style name="Animations.PopUpMenu" />
+	
+	<style name="Animations.PopUpMenu.Left">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
+	</style>
+	
+	<style name="Animations.PopUpMenu.Right">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+	</style>
+	
+	<style name="Animations.PopUpMenu.Center">
+		<item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+		<item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+	</style>
+	
+	<style name="main_tab_bottom">
+		<item name="@android:textSize">@dimen/bottom_tab_font_size</item>
+		<item name="@android:textColor">#00000000</item>
+		<item name="@android:ellipsize">marquee</item>
+		<item name="@android:gravity">center_horizontal</item>
+		<item name="@android:background">@color/color_mainbg</item>
+		<item name="@android:paddingTop">@dimen/bottom_tab_padding_up</item>
+		<item name="@android:paddingBottom">@dimen/bottom_tab_padding_down</item>
+		<item name="@android:layout_width">fill_parent</item>
+		<item name="@android:layout_height">wrap_content</item>
+		<item name="@android:button">@null</item>
+		<item name="@android:singleLine">true</item>
+		<item name="@android:drawablePadding">@dimen/bottom_tab_padding_drawable</item>
+		<item name="@android:layout_weight">1.0</item>
+	</style>
+	
+	
+	 <!-- 录音对话框样式 -->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景全透明 无边框 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 屏幕背景不变暗 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 隐藏标题 -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+	
+</resources>

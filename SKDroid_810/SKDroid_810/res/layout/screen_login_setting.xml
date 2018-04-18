@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- duhaitao修改 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d3dcd6" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/screen_identity_TextView_realm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/server_name"
+            android:textColor="@color/color_text_setting1" />
+
+        <EditText
+            android:id="@+id/screen_identity_editText_realm"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_identity_TextView_realm"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/color_text_setting2" />
+
+        <CheckBox
+            android:id="@+id/screen_advanced_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_advanced_option"
+            android:textColor="@color/color_text_setting1" />
+
+        <LinearLayout
+            android:id="@+id/screen_advanced_option_block"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:isScrollContainer="true"
+                android:orientation="vertical"
+                android:scrollbars="vertical" >
+
+                <TextView
+                    android:id="@+id/screen_identity_TextView_proxy_realm"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/group_server_port"
+                    android:textColor="@color/color_text_setting1" />
+
+                <EditText
+                    android:id="@+id/screen_identity_editText_proxy_realm"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_TextView_proxy_realm"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/color_text_setting2" />
+
+                <TextView
+                    android:id="@+id/screen_identity_TextView_fileurl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_editText_proxy_realm"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/file_server_port"
+                    android:textColor="@color/color_text_setting1" />
+
+                <EditText
+                    android:id="@+id/screen_identity_editText_fileurl"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_TextView_fileurl"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/color_text_setting2" />
+
+                <TextView
+                    android:id="@+id/screen_identity_TextView_mapurl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_editText_fileurl"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/map_server_address"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/screen_identity_editText_mapurl"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_TextView_mapurl"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:visibility="gone" />
+
+                <CheckBox
+                    android:id="@+id/screen_identity_checkBox_earlyIMS"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_identity_editText_mapurl"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="3GPP Early IMS Security"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:isScrollContainer="true"
+                android:orientation="vertical"
+                android:scrollbars="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/screen_network_linearLayout_network"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="40dp"
+                    android:visibility="gone" >
+
+                    <CheckBox
+                        android:id="@+id/screen_network_checkBox_wifi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/open_wifi" />
+
+                    <CheckBox
+                        android:id="@+id/screen_network_checkBox_3g"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/open_ggg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/screen_network_linearLayout_ipversion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_network_linearLayout_network"
+                    android:layout_marginTop="40dp"
+                    android:visibility="gone" >
+
+                    <RadioGroup
+                        android:id="@+id/screen_network_radioGroup_ipversion"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/screen_network_radioButton_ipv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:checked="true"
+                            android:text="IPv4" />
+
+                        <RadioButton
+                            android:id="@+id/screen_network_radioButton_ipv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="IPv6" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/scscf_etting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/screen_network_textView_pcscf_host"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_linearLayout_ipversion"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/cscf_host"
+                        android:textColor="@color/color_text_setting1"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/screen_network_editText_pcscf_host"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_textView_pcscf_host"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="127.0.0.1"
+                        android:textColor="@color/color_text_setting2" />
+
+                    <TextView
+                        android:id="@+id/screen_network_textView_pcscf_port"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_editText_pcscf_host"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/cecf_port"
+                        android:textColor="@color/color_text_setting1"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/screen_network_editText_pcscf_port"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_textView_pcscf_port"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:inputType="number"
+                        android:text="5060"
+                        android:textColor="@color/color_text_setting2" />
+
+                    <TextView
+                        android:id="@+id/screen_network_textView_transport"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_editText_pcscf_port"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/transfer_xieyi"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/screen_network_spinner_transport"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_textView_transport"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:prompt="@string/spinner_transport"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/screen_network_textView_pcscf_dicovery"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_spinner_transport"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/cscf_descovery"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/screen_network_spinner_pcscf_discovery"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_textView_pcscf_dicovery"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:prompt="@string/spinner_pcscf_discovery"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/screen_network_checkBox_sigcomp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_spinner_pcscf_discovery"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/open_sigcomp"
+                        android:textColor="@color/color_text_setting1" />
+
+                    <!-- add by gle -->
+
+                    <TextView
+                        android:id="@+id/screen_reflash_textView_loginTime"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_network_checkBox_sigcomp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/refresh_circle"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/screen_reflash_editText_loginTime"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_reflash_textView_loginTime"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:inputType="number"
+                        android:text="600"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/screen_open_logs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/scscf_etting"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/open_log"
+                    android:visibility="gone" >
+                </CheckBox>
+
+                <CheckBox
+                    android:id="@+id/screen_open_syslogs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/screen_open_logs"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/open_log"
+                    android:textColor="@color/color_text_setting1" />
+
+                <CheckBox
+                    android:id="@+id/screen_natt_checkBox_stun"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_open_syslogs"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/open_stun_server"
+                    android:visibility="gone" >
+                </CheckBox>
+
+                <RelativeLayout
+                    android:id="@+id/screen_natt_relativeLayout_stun_server"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/screen_natt_checkBox_stun"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/screen_natt_textView_stun_server"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/server_address" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/screen_natt_editText_stun_server"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_textView_stun_server"
+                        android:text="numb.viagenie.ca" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/screen_natt_textView_stun_port"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_editText_stun_server"
+                        android:text="@string/server_port" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/screen_natt_editText_stun_port"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_textView_stun_port"
+                        android:inputType="number"
+                        android:text="3478" >
+                    </EditText>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

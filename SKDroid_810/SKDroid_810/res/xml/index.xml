@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-lists xmlns="urn:ietf:params:xml:ns:resource-lists" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:ou="urn:oma:xml:xdm:resource-list:oma-uriusage" 
+		xmlns:opu="urn:oma:xml:xdm:oma-pocusage">
+    <list listIdx="1000" name="1000" xui="sip:root@192.168.1.144">
+	<display-name>Root</display-name>
+	<number>198800001000</number>
+	<entry entryIdx="1" uri="sip:watcher@192.168.1.144" superIdx="1000">
+	    <display-name>Watcher1</display-name>
+	    <number>198800000001</number>
+	    <ou:uriusages/>
+	</entry>
+	<list listIdx="1001" name="1001" xui="sip:group1@192.168.1.144" superIdx="1000">
+	    <display-name>Group1</display-name>
+	    <number>198800001001</number>
+	    <entry entryIdx="2" uri="sip:person1@192.168.1.144" superIdx="1001">
+		<display-name>Person2</display-name>
+		<number>198800000002</number>
+		<ou:uriusages/>
+	    </entry>
+	    <entry entryIdx="3" uri="sip:person2@192.168.1.144" superIdx="1001">
+		<display-name>Person3</display-name>
+		<number>198800000003</number>
+		<ou:uriusages/>
+	    </entry>
+	    <list listIdx="1003" name="1003" xui="sip:group3@192.168.1.144" superIdx="1001">
+		<display-name>Group3</display-name>
+		<number>198800001003</number>
+		<entry entryIdx="4" uri="sip:person3@192.168.1.144" superIdx="1003">
+		    <display-name>Person4</display-name>
+		    <number>198800000004</number>
+		    <ou:uriusages/>
+		</entry>
+		<list listIdx="1004" name="1004" xui="sip:group4@192.168.1.144" superIdx="1003">
+		    <display-name>Group4</display-name>
+		    <number>198800001004</number>
+		</list>
+	    </list>
+	</list>
+	<list listIdx="1002" name="1002" xui="sip:group2@192.168.1.144" superIdx="1000">
+	    <display-name>Group2</display-name>
+	    <number>198800001002</number>
+	</list>
+    </list>
+</resource-lists>
+
+
+

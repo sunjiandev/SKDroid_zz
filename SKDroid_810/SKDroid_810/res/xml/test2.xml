@@ -1,0 +1,38 @@
+<resource-lists xmlns="urn:ietf:params:xml:ns:resource-lists" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:oau="urn:oma:xml:xdm:resource-list:appusage">
+	<list GroupIndex="0" name="0038" uri="sip:38JUN@192.168.1.144">
+	    <display-name>38集团军</display-name>
+        <entry PersonIndex="3" uri="sip:hujunzhang@192.168.1.144" SuperIndex="0">
+            <display-name>胡军长</display-name>
+      	</entry>
+      	
+	    <list GroupIndex="2" name="003801" uri="sip:38JUN_01SHI@192.168.1.144" SuperIndex="0">
+	        <display-name>第一装甲师</display-name>
+	        <entry PersonIndex="4" uri="sip:wenshizhang@192.168.1.144" SuperIndex="2">
+	            <display-name>温师长</display-name>
+	        </entry>
+		</list>
+		
+		<list GroupIndex="1" name="003802" uri="sip:38JUN_02SHI@192.168.1.144" SuperIndex="0">
+		    <display-name>第二装甲师</display-name>
+		    <list GroupIndex="5" name="00380201" uri="sip:38JUN_02SHI_01TUAN@192.168.1.144" SuperIndex="1">
+		        <display-name>第一炮兵团</display-name>
+                <entry PersonIndex="7" uri="sip:botuanzhang@192.168.1.144" SuperIndex="5">
+                    <display-name>薄团长</display-name>
+                </entry>
+                <list GroupIndex="8" name="0038020101" uri="sip:38JUN_02SHI_01TUAN_BIEDONGDUI@193.168.1.144" SuperIndex="5">
+                    <display-name>狗仔别动队</display-name>
+                    <entry PersonIndex="9" uri="wangjiaoshou@192.168.1.144" SuperIndex="8">
+                        <display-name>王教授</display-name>
+                    </entry>
+                </list>
+			</list>
+	    	<entry PersonIndex="6" uri="sip:xishizhang@192.168.1.144" SuperIndex="1">
+	    	    <display-name>习师长</display-name>
+	    	</entry>
+        </list>
+     </list>
+</resource-lists>
+
+

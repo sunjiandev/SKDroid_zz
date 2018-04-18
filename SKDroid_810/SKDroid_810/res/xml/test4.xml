@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource-lists xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ou="urn:oma:xml:xdm:resource-list:oma-uriusage"
+    xmlns:opu="urn:oma:xml:xdm:oma-pocusage"
+    xmlns="urn:ietf:params:xml:ns:resource-lists" >
+
+    <list
+        name="1000"
+        listIdx="1"
+        xui="sip:root@192.168.1.144" >
+        <display-name>
+Root
+        </display-name>
+
+        <number>
+198800001000
+        </number>
+
+        <entry
+            entryIdx="1"
+            superIdx="1"
+            uri="sip:watcher@192.168.1.144" >
+            <display-name>
+Watcher1
+            </display-name>
+
+            <number>
+198800000001
+            </number>
+
+            <ou:uriusages />
+        </entry>
+
+        <list
+            name="1001"
+            listIdx="2"
+            superIdx="1"
+            xui="sip:group1@192.168.1.144" >
+            <display-name>
+Group1
+            </display-name>
+
+            <number>
+198800001001
+            </number>
+
+            <entry
+                entryIdx="3"
+                superIdx="2"
+                uri="sip:person1@192.168.1.144" >
+                <display-name>
+Person2
+                </display-name>
+
+                <number>
+198800000002
+                </number>
+
+                <ou:uriusages />
+            </entry>
+            <entry
+                entryIdx="3"
+                superIdx="1001"
+                uri="sip:person2@192.168.1.144" >
+                <display-name>
+Person3
+                </display-name>
+
+                <number>
+198800000003
+                </number>
+
+                <ou:uriusages />
+            </entry>
+
+            <list
+                name="1003"
+                listIdx="1003"
+                superIdx="1001"
+                xui="sip:group3@192.168.1.144" >
+                <display-name>
+Group3
+                </display-name>
+
+                <number>
+198800001003
+                </number>
+
+                <entry
+                    entryIdx="4"
+                    superIdx="1003"
+                    uri="sip:person3@192.168.1.144" >
+                    <display-name>
+Person4
+                    </display-name>
+
+                    <number>
+198800000004
+                    </number>
+
+                    <ou:uriusages />
+                </entry>
+
+                <list
+                    name="1004"
+                    listIdx="1004"
+                    superIdx="1003"
+                    xui="sip:group4@192.168.1.144" >
+                    <display-name>
+Group4
+                    </display-name>
+
+                    <number>
+198800001004
+                    </number>
+                </list>
+            </list>
+        </list>
+        <list
+            name="1002"
+            listIdx="1002"
+            superIdx="1000"
+            xui="sip:group2@192.168.1.144" >
+            <display-name>
+Group213
+            </display-name>
+
+            <number>
+198800001002
+            </number>
+        </list>
+    </list>
+
+</resource-lists>

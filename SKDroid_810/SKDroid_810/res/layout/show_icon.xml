@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/showicon_imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <com.sunkaisens.skdroid.Utils.RoundProgressBar
+        android:id="@+id/showicon_progress"
+        android_custom:style="STROKE"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:progress="0"
+        android:visibility="gone"
+        android_custom:roundColor="@color/color_text"
+        android_custom:roundProgressColor="@color/color_mainbg"
+        android_custom:roundWidth="4dp"
+        android_custom:textColor="@color/color_titleblack"
+        android_custom:textSize="12sp" />
+
+</RelativeLayout>

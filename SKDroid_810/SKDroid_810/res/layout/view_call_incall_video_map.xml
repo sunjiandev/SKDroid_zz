@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_call_map" >
+                
+     	 <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5px"
+        android:gravity="center"
+        android:text="@string/call_desc_video"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:textStyle="bold" 
+        android:textColor="@color/color_white">
+  		  </TextView>
+
+    <Button
+        android:id="@+id/video_hangup"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/sel_textbutton_red"
+        android:padding="5dp"
+        android:text="@string/finish"
+        android:textColor="@color/color_text2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+	
+	        <TextView
+	            android:id="@+id/tv_user_remote_party"
+	            android:textColor="@color/color_white"
+	            android:text="12345678"
+	            android:layout_marginLeft="10dp"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+        		android:layout_below="@id/title"
+        		android:layout_centerHorizontal="true" />
+
+    <FrameLayout
+        android:id="@+id/remote_video_bgframe"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_below="@id/tv_user_remote_party"
+        android:layout_alignParentRight="true"
+        android:layout_margin="4dp"
+        android:background="@drawable/grad_whiterounded"
+        android:minHeight="90dp"
+        android:minWidth="90dp"
+        android:padding="4dp" >
+
+        <FrameLayout
+            android:id="@+id/view_call_incall_video_FrameLayout_remote_video"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center" >
+        </FrameLayout>
+        	
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/view_call_incall_video_FrameLayout_local_video"
+        android:layout_width="1dp"
+        android:layout_height="1dp" >
+    </FrameLayout>
+
+</RelativeLayout>

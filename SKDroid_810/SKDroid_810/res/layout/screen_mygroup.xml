@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/screen_mygroup_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="8dp"
+            android:src="@drawable/jiantou" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/screen_mygroup_back"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/string_mygroup"
+            android:textColor="@color/color_mainbg"
+            android:textSize="22dp" />
+
+        <ImageButton
+            android:id="@+id/screen_tab_mygroup_search_bt"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/screen_tab_mygroup_add_bt"
+            android:background="@drawable/title_search"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/screen_tab_mygroup_add_bt"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/title_add"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_greybg" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/screen_mygroup_textView_org"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="22dp"
+                android:text="@string/string_myorg"
+                android:textColor="@color/color_darktext"
+                android:textSize="16dp" >
+            </TextView>
+
+            <com.sunkaisens.skdroid.component.MyListView
+                android:id="@+id/screen_mygroup_listview_org"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:descendantFocusability="blocksDescendants"
+                android:divider="@color/color_mainbg"
+                android:focusable="true"
+                android:dividerHeight="0dp"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/screen_mygroup_listview_org_null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:paddingBottom="4dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="4dp"
+                android:text="@string/string_myorg_null" />
+
+            <TextView
+                android:id="@+id/screen_mygroup_textView_bussiness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="22dp"
+                android:text="@string/string_mybussiness"
+                android:textColor="@color/color_darktext"
+                android:textSize="16dp" >
+            </TextView>
+
+            <com.sunkaisens.skdroid.component.MyListView
+                android:id="@+id/screen_mygroup_listview_bussiness"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:focusable="true"
+                android:descendantFocusability="blocksDescendants"
+                android:divider="@color/color_mainbg"
+                android:dividerHeight="0dp"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/screen_mygroup_listview_bussiness_null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:paddingBottom="4dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="4dp"
+                android:text="@string/string_mybussiness_null" />
+
+            <TextView
+                android:id="@+id/screen_mygroup_textView_publicgroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:divider="@color/color_mainbg"
+                android:dividerHeight="0dp"
+                android:gravity="left"
+                android:paddingLeft="22dp"
+                android:text="@string/string_Contact_allContactPublic"
+                android:textColor="@color/color_darktext"
+                android:textSize="16dp" >
+            </TextView>
+
+            <com.sunkaisens.skdroid.component.MyListView
+                android:id="@+id/screen_mygroup_listview_publicgroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:descendantFocusability="blocksDescendants"
+                android:divider="@color/color_mainbg"
+                android:focusable="true"
+                android:dividerHeight="0dp"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/screen_mygroup_listview_publicgroup_null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:paddingBottom="4dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="4dp"
+                android:text="@string/string_publicgroup_null" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_black"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:src="@drawable/screen_hide1" />
+
+    <LinearLayout
+        android:id="@+id/ll_view_call_incall_audio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back"
+        android:background="@color/color_black"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/audio_icon"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_gravity="center"
+            android:layout_margin="5dip"
+            android:src="@drawable/defaulticon" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/audio_remote"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center_horizontal"
+            android:text="John Doe"
+            android:textSize="25sp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/audio_incall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@string/string_incall"
+            android:textSize="18sp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_ming_or_mi_call_video_incall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/block_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <ImageView
+            android:id="@+id/audio_mute"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/circle"
+            android:src="@drawable/mute_up" />
+
+        <ImageView
+            android:id="@+id/audio_hangup"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/hangup2"
+            android:contentDescription="@string/hangup" />
+
+        <ImageView
+            android:id="@+id/audio_speaker"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/speaker_up" />
+
+        <TextView
+            android:id="@+id/screen_audio_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="00:00:00"
+            android:textColor="@color/color_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

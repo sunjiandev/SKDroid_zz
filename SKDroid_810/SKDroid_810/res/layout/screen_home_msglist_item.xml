@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="1dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/screen_home_messages_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="2"
+                    android:text="John Doe"
+                    android:textSize="20dp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_home_messages_item_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp" >
+                </TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/screen_home_messages_item_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_home_messages_item_name"
+                android:text="TextView" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

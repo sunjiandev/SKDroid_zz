@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <FrameLayout
+        android:id="@+id/sv_remote_video"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_black"
+        android:orientation="horizontal" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/sv_local_view"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="4dp"
+        android:background="#cccccc" >
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/sv_block1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/goback"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription=" "
+            android:src="@drawable/screen_hide1" />
+
+        <TextView
+            android:id="@+id/remote_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="@color/color_white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_ming_or_mi_single_video"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/sv_block1"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:id="@+id/block_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <ImageView
+            android:id="@+id/speaker"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/speaker_up"
+            android:contentDescription="@string/goback" />
+
+        <ImageView
+            android:id="@+id/video_hangup"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/hangup2"
+            android:contentDescription="@string/hangup" />
+
+        <ImageView
+            android:id="@+id/video_switch_camera"
+            android:layout_width="72dip"
+            android:layout_height="72dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/sw_camera"
+            android:contentDescription="@string/switchcamera" />
+
+        <TextView
+            android:id="@+id/screen_video_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="00:00:00"
+            android:textColor="@color/color_white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

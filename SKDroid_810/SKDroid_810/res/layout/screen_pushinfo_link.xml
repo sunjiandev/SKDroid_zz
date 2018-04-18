@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_pushinfo_link_linearLayout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_titleblack"
+        android:padding="3dp"
+        android:weightSum="8" >
+
+        <ImageView
+            android:id="@+id/screen_pushinfo_link_linearLayout_top_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/jiantou"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/screen_pushinfo_link_textview_name"
+          android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingRight="50dp"
+            android:layout_margin="2dp"
+            android:layout_weight="2.20"
+            android:focusable="false"
+            android:layout_toRightOf="@id/screen_pushinfo_link_linearLayout_top_back"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:text="name"
+            android:singleLine="true"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"
+            android:textStyle="bold" >
+        </TextView>
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/pushinfo_wvLink"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

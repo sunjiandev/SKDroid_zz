@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemlayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_sel_green"
+    android:focusable="false"
+    android:paddingBottom="4dip"
+    android:paddingLeft="12dip"
+    android:paddingRight="12dip" >
+
+    <ImageView
+        android:id="@+id/itemimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/string_startcall"
+        android:focusable="false"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/itemname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/itemimage"
+        android:focusable="false"
+        android:gravity="left"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textSize="16.0sp" />
+
+    <TextView
+        android:id="@+id/itemtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemname"
+        android:layout_toRightOf="@id/itemimage"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:gravity="left"
+        android:marqueeRepeatLimit="1"
+        android:singleLine="true"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@+id/itemtext2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemname"
+        android:layout_toRightOf="@id/itemimage"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:gravity="left"
+        android:marqueeRepeatLimit="1"
+        android:singleLine="true"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@+id/itemtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:gravity="right"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="@string/day_today" />
+
+</RelativeLayout>

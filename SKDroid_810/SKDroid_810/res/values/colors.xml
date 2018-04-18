@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+     <!-- Colors -->
+     <color name="color_ga3">#475560</color>
+     <color name="color_text_n1">#f07d31</color>
+     <color name="color_text_n2">#91c6e8</color>
+     <color name="color_text_blue">#18b7dc</color>
+     
+     <color name="color_tabmore_self_bg">#5c7d92</color>
+     
+     <color name="color_light_grey">#efeff4</color>
+     <color name="color_text_setting1">#323232</color>
+     <color name="color_text_setting2">#78a5b1</color>
+     
+     
+     
+    <color name="color_main1">#293409</color>
+    <color name="color_main2">#6a5e21</color>
+    <color name="color_main3">#bcbcbc</color>
+    <color name="color_main4">#d7d7d7</color>
+    <color name="color_mainbg">#FFFFFFFF</color>
+    <color name="color_titleblack">#333333</color>
+    <color name="color_black">#000000</color>
+    <color name="color_greybg">#ececec</color>
+    <color name="color_text">#cccccc</color>
+    <color name="color_text_grey">#808080</color>
+    <color name="color_darktext">#666666</color>
+    <color name="color_lightgreen">#00CC00</color>
+    <color name="color_red">#FF0000</color>
+    <color name="color_tab_host_line">#797979</color>
+    <color name="color_darkgreen">#009900</color>
+    <color name="color_childbg1">#5d7811</color>
+    <color name="color_childbg2">#f2ffd3</color>
+    <color name="color_childbg3">#c13f3f</color>
+    <color name="color_childbg4">#f08383</color>
+    <color name="color_childbg5">#58e900</color>
+    <color name="color_childbg6">#b3d463</color>
+    <color name="color_text1">#293409</color>
+    <color name="color_text2">#f2ffd3</color>
+    <color name="color_text3">#8e8e8e</color>
+    <color name="color_text4">#6a5e21</color>
+    <color name="color_neterror">#F88797</color>
+
+    <!-- 灰色 -->
+    <color name="color_text5">#c0c0c0</color>
+    <color name="color_line1">#c1caad</color>
+    <color name="color_background1">#6a5e22</color>
+    <color name="color_background2">#5a701d</color>
+    <color name="color_word">#5b7a06</color>
+    <color name="color_white">#FFFFFF</color>
+
+    <!-- 透明 -->
+    <color name="color_transparent">#00000000</color>
+    <color name="color_users_in_group">#7fffd4</color>
+    <color name="color_childbg_transparent">#7fb3d463</color>
+    <color name="color_contact_list_item">#febc2e</color>
+    
+</resources>

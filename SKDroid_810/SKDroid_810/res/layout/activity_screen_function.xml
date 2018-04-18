@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sunkaisens.skdroid.Screens.ScreenAboutExpanded"
+    tools:ignore="MergeRootFrame" >
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/jiantou"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/screen_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/back"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/func_desc"
+            android:textColor="@color/color_mainbg"
+            android:textSize="22dp" />
+    </RelativeLayout>
+    <FrameLayout 
+        android:id="@+id/about_fragment_parent"
+        android:layout_below="@id/screen_top"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"/>
+</RelativeLayout>
+

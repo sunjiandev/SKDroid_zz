@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/screen_search_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="8dp"
+            android:src="@drawable/jiantou" />
+
+        <ImageView
+            android:id="@+id/screen_search_Image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/screen_search_back"
+            android:background="@drawable/btn_search"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/screen_searchedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@+id/screen_search_Image"
+            android:background="@color/color_transparent"
+            android:hint="@string/string_searchhint"
+            android:padding="5dp"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/screen_searchedit"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/screen_search_back"
+            android:background="@color/color_lightgreen" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/screen_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:divider="@color/color_mainbg"
+        android:dividerHeight="0dp"
+        android:focusable="true"
+        android:scrollbars="none" />
+
+</LinearLayout>

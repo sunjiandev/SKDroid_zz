@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/newmsg_linearLayout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/newMsg_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:padding="8dp"
+            android:src="@drawable/jiantou" />
+
+        <TextView
+            android:id="@+id/newmsg_textview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/newMsg_back"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/new_sms"
+            android:textColor="@color/color_mainbg"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/dividing_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/newmsg_linearLayout_top"
+        android:background="@color/color_childbg1" />
+
+    <LinearLayout
+        android:id="@+id/newMsg_linearLayout_middle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/dividing_line"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:id="@+id/screen_newsms_linearLayout_top"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
+            android:background="@color/color_mainbg"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            android:transcriptMode="normal" >
+
+            <ImageButton
+                android:id="@+id/add_contact"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/new_msm_add_contact" />
+
+            <EditText
+                android:id="@+id/screen_newsms_editText_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/shape_border_keyblack0"
+                android:hint="@string/input_mumber_hint"
+                android:inputType="textMultiLine"
+                android:maxLength="256"
+                android:maxLines="5"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp" >
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/newMsg_linearLayout_top_filetransfer_view"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_text" />
+
+        <LinearLayout
+            android:id="@+id/newMsg_linearLayout_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_mainbg"
+            android:gravity="center"
+            android:padding="8dp"
+            android:weightSum="2" >
+
+            <ImageView
+                android:id="@+id/newMsg_button_IMaudio_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:padding="3dp"
+                android:src="@drawable/screenchat_imaudeo" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2" >
+
+                <Button
+                    android:id="@+id/newMsg_linearLayout_bottom_IMaudioTalk_button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/shape_bg_button_normal_grey"
+                    android:text="@string/string_chat_IMaudio_down"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/newMsg_editText_compose_parentlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <EditText
+                        android:id="@+id/newMsg_editText_compose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/color_mainbg"
+                        android:gravity="bottom"
+                        android:hint="@string/input_content_hint"
+                        android:inputType="textMultiLine"
+                        android:maxLength="141"
+                        android:maxLines="5"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="30dp"
+                        android:paddingTop="5dp"
+                        android:textSize="16sp" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/newMsg_tv_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/newMsg_editText_compose"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="2dp"
+                        android:text="211/211"
+                        android:textSize="10sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/newMsg_editText_compose"
+                        android:background="@color/color_text" />
+                </RelativeLayout>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/newMsg_button_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/sel_textbutton_green"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/send"
+                android:textColor="@color/color_white"
+                android:textSize="16sp"
+                android:visibility="gone" >
+            </Button>
+
+            <ImageView
+                android:id="@+id/newMsg_add_filetransfer_imagebutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:padding="3dp"
+                android:src="@drawable/n_add" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/newMsg_linearLayout_bottom_filetransfer_view"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_text"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/newMsg_linearLayout_bottom_filetransfer_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_mainbg"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/newMsg_bottom_firstline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/newMsg_button_takephoto_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/screenchat_transferimage"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/string_chat_picture"
+                        android:textColor="@color/color_text"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/newMsg_button_filetransfer_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/screenchat_transferfile"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/string_chat_file"
+                        android:textColor="@color/color_text"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/newMsg_button_IMvideo_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/screenchat_imvideo"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/string_chat_IMvideo"
+                        android:textColor="@color/color_text"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/newMsg_button_audiocall_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/callkey_audio"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/call_desc_audio"
+                        android:textColor="@color/color_text"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/newMsg_bottom_firstline"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="4" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/newMsg_button_videocall_button"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/callkey_video"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/call_desc_video"
+                        android:textColor="@color/color_text"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" >
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

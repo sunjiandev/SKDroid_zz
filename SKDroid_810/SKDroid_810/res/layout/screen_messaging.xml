@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/screen_messaging_textView_conf_factory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:layout_marginTop="5px"
+            android:text="Ad-Hoc Conference Factory" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_messaging_editText_conf_fact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_textView_conf_factory"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="sip:Conference-Factory@open-ims.test" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/screen_messaging_textView_psi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_editText_conf_fact"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="@string/smsc" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_messaging_editText_psi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_textView_psi"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="sip:+33100000000@open-ims.test" >
+        </EditText>
+
+        <CheckBox
+            android:id="@+id/screen_messaging_checkBox_binary_sms"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_editText_psi"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="Enable Binary SMS (RP-DATA)" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_messaging_checkBox_msrp_success"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_checkBox_binary_sms"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="Enable MSRP Success Reports" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_messaging_checkBox_msrp_failure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_checkBox_msrp_success"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="Enable MSRP Failure Reports" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_messaging_checkBox_ofdr"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_checkBox_msrp_failure"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:text="Enable OMA Final Delivery Reports" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_messaging_checkBox_mwi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_messaging_checkBox_ofdr"
+            android:layout_marginLeft="5px"
+            android:text="Subscribe to message waiting indication" >
+        </CheckBox>
+    </RelativeLayout>
+
+</ScrollView>

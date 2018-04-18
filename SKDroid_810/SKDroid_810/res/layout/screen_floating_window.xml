@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_moving"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/btn_moving"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/btn_fold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:background="@drawable/map_open_group" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/btn_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/map_open_draw_line" />
+
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	
+		    <ImageButton
+		        android:id="@+id/btn_open_kind"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="18dip"
+		        android:background="@drawable/map_open_kind" />
+	
+		    <LinearLayout
+		        android:id="@+id/llPlotting"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="vertical"
+		        android:visibility="gone" >
+		
+		        <ImageButton
+		            android:id="@+id/btn_plotting_green"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="18dip"
+		            android:background="@drawable/map_open_flag_green" />
+		
+		        <ImageButton
+		            android:id="@+id/btn_plotting_red"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="18dip"
+		            android:background="@drawable/map_open_flag_red" />
+		
+		        <ImageButton
+		            android:id="@+id/btn_plotting_tank"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="18dip"
+		            android:background="@drawable/map_open_flag_tank" />
+		
+		        <ImageButton
+		            android:id="@+id/btn_plotting_truck"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="18dip"
+		            android:background="@drawable/map_open_flag_truck" />
+		        
+		    </LinearLayout>
+	    </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_plotting_drag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/map_open_flag_drag" />
+
+        <ImageButton
+            android:id="@+id/btn_plotting_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/map_open_flag_delete" />
+
+        <ImageButton
+            android:id="@+id/btn_draw_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/map_open_draw_circle" />
+
+        <ImageButton
+            android:id="@+id/btn_mark_prop_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dip"
+            android:background="@drawable/map_open_prop_modify" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/configure_network"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/screen_network_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/configure_network"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/screen_network_linearLayout_network"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_textview"
+                android:layout_marginBottom="5dp" >
+
+                <CheckBox
+                    android:id="@+id/screen_network_checkBox_wifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/open_wifi" />
+
+                <CheckBox
+                    android:id="@+id/screen_network_checkBox_3g"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/open_ggg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/screen_network_linearLayout_ipversion"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_linearLayout_network" >
+
+                <RadioGroup
+                    android:id="@+id/screen_network_radioGroup_ipversion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/screen_network_radioButton_ipv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:checked="true"
+                        android:text="IPv4" />
+
+                    <RadioButton
+                        android:id="@+id/screen_network_radioButton_ipv6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="IPv6" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/screen_network_textView_pcscf_host"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_linearLayout_ipversion"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/cscf_host"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/screen_network_editText_pcscf_host"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_textView_pcscf_host"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="127.0.0.1" />
+
+            <TextView
+                android:id="@+id/screen_network_textView_pcscf_port"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_editText_pcscf_host"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/cscf_port"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/screen_network_editText_pcscf_port"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_textView_pcscf_port"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:text="5060" />
+
+            <TextView
+                android:id="@+id/screen_network_textView_transport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_editText_pcscf_port"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/transfer_yieyi"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/screen_network_spinner_transport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_textView_transport"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:prompt="@string/spinner_transport" />
+
+            <TextView
+                android:id="@+id/screen_network_textView_pcscf_dicovery"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_spinner_transport"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/cscf_descovery"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/screen_network_spinner_pcscf_discovery"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_textView_pcscf_dicovery"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:prompt="@string/spinner_pcscf_discovery" />
+
+            <CheckBox
+                android:id="@+id/screen_network_checkBox_sigcomp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_network_spinner_pcscf_discovery"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/open_sigcomp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contacts"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/configure_network"
+            android:layout_marginTop="40dp" >
+
+            <TextView
+                android:id="@+id/screen_contacts_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/contact"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/screen_contacts_radioGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_contacts_textview"
+                android:orientation="vertical" >
+
+                <RadioButton
+                    android:id="@+id/screen_contacts_radioButton_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:text="@string/local_saver" />
+
+                <RadioButton
+                    android:id="@+id/screen_contacts_radioButton_remote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/remote_saver" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/screen_contacts_relativeLayout_remote"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/screen_contacts_radioGroup"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+
+                <TextView
+                    android:id="@+id/screen_contacts_textView_xcaproot"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dafault_address" />
+
+                <EditText
+                    android:id="@+id/screen_contacts_editText_xcaproot"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_contacts_textView_xcaproot"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/screen_contacts_textView_username"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_contacts_editText_xcaproot"
+                    android:text="@string/xui" />
+
+                <EditText
+                    android:id="@+id/screen_contacts_editText_xui"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_contacts_textView_username"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/screen_contacts_textView_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_contacts_editText_xui"
+                    android:text="@string/password" />
+
+                <EditText
+                    android:id="@+id/screen_contacts_editText_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_contacts_textView_password"
+                    android:inputType="textPassword" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contacts"
+            android:layout_marginTop="40dp" >
+
+            <TextView
+                android:id="@+id/screen_gps_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="GPS"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/screen_gps_textview_SendGPSToHost"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_gps_textview"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/send_gps_mobile" />
+
+            <EditText
+                android:id="@+id/screen_gps_edittext_SendGPSToHost"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_gps_textview_SendGPSToHost"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:id="@+id/screen_gps_textview_SendGPSToPort"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_gps_edittext_SendGPSToHost"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/send_gps_port" />
+
+            <EditText
+                android:id="@+id/screen_gps_edittext_SendGPSToPort"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_gps_textview_SendGPSToPort"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

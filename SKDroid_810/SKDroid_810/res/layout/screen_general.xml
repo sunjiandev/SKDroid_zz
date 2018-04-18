@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_greybg" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="true"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/screen_top"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/app_title_bg" >
+
+            <ImageView
+                android:id="@+id/screen_general_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/jiantou"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/screen_general_back"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/general_setting"
+                android:textColor="@color/color_mainbg"
+                android:textSize="22sp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/gray_divide"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/screen_top"
+            android:background="@color/color_greybg" />
+
+        <TextView
+            android:id="@+id/screen_general_textView_media_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gray_divide"
+            android:text="@string/media_setting"
+            android:textSize="16sp"
+            android:visibility="gone" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/screen_general_spinner_media_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_textView_media_profile"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" >
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_FEC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_spinner_media_profile"
+            android:text="@string/open_FEC" 
+            android:textColor="@color/color_titleblack"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp"
+            android:visibility="gone">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_AEC"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_FEC"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/aec_setting"
+            android:textColor="@color/color_titleblack"
+            android:textSize="20sp"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_VAD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_AEC"
+            android:text="@string/voice_test"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_NR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_VAD"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/voice_down"
+            android:textColor="@color/color_titleblack"
+            android:textSize="20sp"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_bypassencoding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_NR"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/open_coding"
+            android:textColor="@color/color_titleblack"
+            android:textSize="20sp"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_bypassdecoding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_bypassencoding"
+            android:text="@string/open_decoding"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_autoStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_bypassdecoding"
+            android:text="@string/auto_run"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_interceptCall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_autoStart"
+            android:text="@string/call_out_intercept"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_fullscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_interceptCall"
+            android:text="@string/video_full"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_ffc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_fullscreen"
+            android:text="@string/open_forcamera"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_autoLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_ffc"
+            android:text="@string/auto_login"
+            android:visibility="gone" >
+        </CheckBox>
+        <!--
+        <CheckBox
+            android:id="@+id/screen_general_checkBox_FEC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_autoLogin"
+            android:text="@string/open_FEC"
+            android:textColor="@color/color_titleblack"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp">
+        </CheckBox>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/screen_general_checkBox_FEC_"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_checkBox_autoLogin"
+            android:background="@color/color_mainbg"
+            android:padding="16dp" 
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:text="@string/self_run"
+                android:textColor="@color/color_titleblack"
+                android:textSize="18sp" />
+<!--
+            <ToggleButton
+                android:id="@+id/screen_general_checkBox_FEC"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/togglebutton"
+                android:textOff=""
+                android:textOn="" />
+                -->
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/screen_general_textView_playback_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/screen_general_checkBox_FEC_"
+            android:text="@string/audio_setting"
+            android:textSize="16sp"
+            android:visibility="gone" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/screen_general_spinner_playback_level"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_textView_playback_level"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" >
+        </Spinner>
+
+        <TextView
+            android:id="@+id/screen_general_textView_enum_domain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_spinner_playback_level"
+            android:text="@string/num_map"
+            android:textSize="16sp"
+            android:visibility="gone" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_general_editText_enum_domain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_textView_enum_domain"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="2dp"
+            android:text=""
+            android:visibility="gone" >
+        </EditText>
+
+        <!--
+        <TextView
+            android:id="@+id/screen_general_textView_general_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_editText_enum_domain"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="18dp"
+            android:text="通用设置"
+            android:textColor="@color/color_darktext"
+            android:textSize="20sp" >
+        </TextView>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/screen_general_setting_videofbl_RelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_editText_enum_domain"
+            android:background="@color/color_mainbg" >
+
+            <RelativeLayout
+                android:id="@+id/screen_general_setting_videofblchoose_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/video_fbl"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/screen_general_setting_videofblchoose_choosed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/video_fbl_lc"
+                    android:textColor="@color/color_text"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/color_text" />
+            
+              <TextView
+                android:id="@+id/screen_qos_textView_network_losepackets"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+            	android:paddingTop="5px"
+                android:layout_below="@+id/screen_general_setting_videofblchoose_layout"
+                android:text="@string/network_checking"
+                android:textSize="16dp" 
+				android:background="@color/color_mainbg"
+            	android:textColor="@color/color_titleblack" >
+            </TextView>
+            <EditText
+                android:id="@+id/screen_qos_editText_networklosepackets"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_qos_textView_network_losepackets"
+                android:inputType="number"
+                android:text="25" 
+                android:layout_marginLeft="10px"
+            	android:layout_marginRight="5px" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/screen_general_setting_selfrun_RelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_setting_videofbl_RelativeLayout"
+            android:background="@color/color_mainbg"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/full_screen"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="20sp" />
+
+                <ToggleButton
+                    android:id="@+id/screen_general_setting_self_run"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/togglebutton"
+                    android:textOff=""
+                    android:textOn="" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/color_text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/screen_general_setting_fullscreen_RelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_general_setting_selfrun_RelativeLayout"
+            android:background="@color/color_mainbg" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/full_screen"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="20sp" />
+
+                <ToggleButton
+                    android:id="@+id/screen_general_setting_video_fullscreen"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/togglebutton"
+                    android:textOff=""
+                    android:textOn="" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

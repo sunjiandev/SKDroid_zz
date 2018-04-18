@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="functions">
+        <item>语音单呼</item>
+        <item>视频单呼</item>
+        <item>语音组呼</item>
+        <item>视频组呼</item>
+        <item>拨号盘</item>
+        <item>通话记录</item>
+        <item>群发即时消息</item>
+        <item>一对一即时消息</item>
+        <item>一对一即时语音</item>
+        <item>一对一即时视频</item>
+        <item>一对一图片传输</item>
+        <item>新建短信</item>
+        <item>历史消息</item>
+        <item>通讯录下载显示</item>
+        <item>好友在线状态显示</item>
+        <item>好友搜索</item>
+    </string-array>
+    <string-array name="bugs">
+        <item>视频组呼有较小几率出现摄像头启动失败</item>
+        <item>多文件同时上传有可能上传失败</item>
+    </string-array>
+
+    <!--
+         1、解决视频组呼时间显示消失问题
+		2、解决聊天记录删除混乱问题
+		3、程序启动时增加更新检测 
+		修改聊天室布局
+		修改通讯录列表在线和离线列表切换问题
+    -->
+    <string-array name="update_tips">
+
+        <item>关闭sip压缩，打开aec，打开NR</item>
+
+        <item>所有自己不在的组均不允许发起组业务</item>
+        <item>修改在线更新功能bug</item>
+        <item>修改视频组呼发起者挂断按钮消失问题</item>
+        <item>通话界面禁用返回键</item>
+        <item>修改视频通化界面扬声器图标问题</item>
+        
+        <item >增加聊天室上传下载队列管理，按序上传下载</item>
+        <item >修改聊天室即时视频，即时语音进度条</item>
+        <item >修改华为手机视频通话无图像问题</item>
+
+        <item >增加头像上传、下载、变更功能</item>
+         <item >增加消息界面显示未读短消息功能</item>
+        
+    </string-array>
+
+</resources>

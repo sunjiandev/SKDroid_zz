@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/color_greybg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/my_group_layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_mainbg"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:paddingBottom="5dp" >
+
+        <LinearLayout
+            android:id="@+id/screen_tab_contact_mygroup_layout_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="30dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="0dp"
+                android:src="@drawable/my_group" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:text="@string/string_mygroup"
+                android:textColor="@color/color_titleblack"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/color_text"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/screen_tab_contact_mysubscribe_layout_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:paddingLeft="18dp"
+            android:visibility="gone"
+            android:paddingRight="30dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="0dp"
+                android:src="@drawable/my_publicgroup" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:text="@string/string_Contact_allContactSubscribe"
+                android:textColor="@color/color_titleblack"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/top_middle"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/my_group_layout_header"
+        android:background="@color/color_greybg" />
+
+</RelativeLayout>

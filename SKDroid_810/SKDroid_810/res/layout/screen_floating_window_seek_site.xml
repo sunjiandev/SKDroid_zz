@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/btn_seek_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    	android:background="@color/color_mainbg"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="18dip"
+        android:src="@drawable/map_open_seek_site" />
+
+    <ListView
+        android:id="@+id/lv_seek_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_seek_site"
+        android:layout_marginTop="110dp"
+        android:visibility="gone" >
+    </ListView>
+
+</RelativeLayout>

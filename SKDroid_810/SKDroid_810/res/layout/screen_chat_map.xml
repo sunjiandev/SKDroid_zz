@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg" >
+
+    <RelativeLayout
+        android:id="@+id/screen_chat_linearLayout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_mainbg"
+        android:padding="3dp"
+        android:weightSum="8" >
+
+     	<ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:padding="5dp"
+                android:background="@color/color_mainbg"
+                android:src="@drawable/button_back"  /> 
+
+        <TextView
+            android:id="@+id/screen_chat_textview_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="2dp"
+            android:layout_weight="2.20"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:text="name"
+            android:textColor="@color/color_text1"
+            android:textSize="14sp"
+            android:textStyle="bold" >
+        </TextView>
+    </RelativeLayout>
+    
+    <View 
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/screen_chat_linearLayout_top"
+        android:background="@color/color_childbg1" />
+
+    <LinearLayout
+        android:id="@+id/screen_chat_linearLayout_middle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/line"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2" >
+
+            <ListView
+                android:id="@+id/screen_chat_listView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg"
+                android:clickable="false"
+                android:divider="@color/color_childbg2" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/screen_chat_linearLayout_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_mainbg"
+            android:gravity="center"
+            android:padding="8dp"
+            android:weightSum="2" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="2" >
+                
+	            <EditText
+	                android:id="@+id/screen_chat_editText_compose"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center"
+	                android:background="@drawable/shape_border_keyblack0"
+	                android:gravity="bottom"
+	                android:hint="@string/chat_map_input_hint"
+	                android:inputType="textMultiLine"
+	                android:maxLength="256"
+	                android:maxLines="5"
+	                android:paddingLeft="5dp"
+	                android:paddingTop="5dp"
+	                android:paddingBottom="5dp"
+	                android:paddingRight="30dp" >
+	            </EditText>
+	            
+	            <TextView 
+	                android:id="@+id/screen_chat_tv_count"
+	                android:layout_width="wrap_content"
+	                android:layout_alignParentRight="true"
+	                android:layout_alignBottom="@+id/screen_chat_editText_compose"
+	                android:layout_height="wrap_content"
+	                android:textSize="10sp"
+	                android:text="256/256"
+	                android:paddingRight="2dp"/>
+	            
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/screen_chat_button_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/sel_textbutton_green"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/chat_map_send"
+                android:textColor="@color/color_text1"
+                android:textSize="16sp" >
+            </Button>
+
+	        <ImageButton
+                android:id="@+id/add_filetransfer_imagebutton"
+	            android:layout_width="33dp"
+	            android:layout_height="33dp"
+	            android:layout_marginLeft="3dp"
+	            android:layout_alignParentRight="true"
+	            android:background="@drawable/sel_keypad"
+                android:src="@drawable/btn_add"
+                android:visibility="gone" />
+        </LinearLayout>
+	    
+	    <View 
+            android:id="@+id/screen_chat_linearLayout_bottom_filetransfer_view"
+	        android:layout_width="fill_parent"
+	        android:layout_height="1dp"
+	        android:background="@color/color_childbg1"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/screen_chat_linearLayout_bottom_filetransfer_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_mainbg"
+            android:gravity="center"
+            android:padding="8dp"
+            android:weightSum="2"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/screen_chat_button_filetransfer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/sel_textbutton_green"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/chat_map_send_file"
+                android:textColor="@color/color_text2"
+                android:textSize="16sp" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

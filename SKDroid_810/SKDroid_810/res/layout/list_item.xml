@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    android:minHeight="40dip" >
+
+    <ImageView
+        android:id="@+id/ivicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="40dip" />
+
+    <TextView
+        android:id="@+id/itemvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivicon"
+        android:gravity="center_vertical"
+        android:minHeight="40dip"
+        android:text="@string/hello"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/ivec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:src="@drawable/tree_ec" />
+
+</RelativeLayout>

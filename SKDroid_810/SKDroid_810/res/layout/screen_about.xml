@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/jiantou"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/back"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/string_about"
+            android:textColor="@color/color_mainbg"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_mainbg" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="3dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dip"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:contentDescription=""
+                    android:src="@drawable/icon" />
+
+                <TextView
+                    android:id="@+id/sunkaisens_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sunkaisens_version"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/color_text" />
+
+                <TextView
+                    android:id="@+id/func_desc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="15dip"
+                    android:text="@string/func_desc"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/color_text" />
+                
+                 <TextView
+                    android:id="@+id/update_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="15dip"
+                    android:text="@string/update_list"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/color_text" />
+
+                <TextView
+                    android:id="@+id/bug_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dip"
+                    android:text="@string/bug_list"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/color_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/feedback_but"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dip"
+                    android:text="@string/feedback_but"
+                    android:textColor="@color/color_darktext"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/color_text"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="30dp" >
+
+                <TextView
+                    android:id="@+id/screen_about_textView_copyright"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="center_horizontal"
+                    android:text="@string/copyright"
+                    android:textColor="@color/color_darktext" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen_chat_audiorecorder_bgDialog"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/color_transparent"
+    >
+
+    <ImageView
+        android:id="@+id/screen_chat_audiorecorder_Imageview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/audio_icon"
+        />
+
+    <ImageView
+        android:id="@+id/screen_chat_audiorecorder_Imageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/screen_chat_audiorecorder_Imageview1"
+        android:layout_centerInParent="true"
+        android:src="@drawable/audio_1" />
+
+</RelativeLayout>

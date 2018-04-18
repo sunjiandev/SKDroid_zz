@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/image_and_button_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+
+   >
+
+    <ImageView
+        android:id="@+id/screen_chat_takephoto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#005500"
+        android:padding="0dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_gravity="center_vertical"
+         >
+
+        <ImageButton
+            android:id="@+id/screen_chat_takephoto_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/is_transfer_no" />
+
+        <com.sunkaisens.skdroid.Utils.RoundProgressBar
+            android:id="@+id/screen_chat_takephoto_send_progress"
+            android_custom:style="STROKE"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"
+            android_custom:roundColor="@color/color_text"
+            android_custom:roundProgressColor="@color/color_mainbg"
+            android_custom:roundWidth="4dp"
+            android_custom:textColor="@color/color_titleblack"
+            android_custom:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/screen_chat_takephoto_transfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/is_transfer_yes" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp" >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="2dp"
+            android:background="@color/color_mainbg"
+            android:padding="5dp"
+            android:src="@drawable/button_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/string_persondetail"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_childbg1" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:scrollbars="vertical" >
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/defaulticon" />
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/screen_identity_textView_displayname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/display_name"
+                    android:textSize="20sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_identity_editText_displayname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_mainbg"
+                    android:layout_weight="1"
+                    android:text="alice"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/screen_identity_textView_impu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="2"
+                    android:text="@string/public_identity"
+                    android:textSize="20sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_identity_editText_impu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_mainbg"
+                    android:layout_weight="1"
+                    android:text="sip:alice@open-ims.test"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/screen_identity_textView_impi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="2"
+                    android:text="@string/private_identity"
+                    android:textSize="20sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_identity_editText_impi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_mainbg"
+                    android:layout_weight="1"
+                    android:text="alice@open-ims.test"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/screen_identity_textView_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="2"
+                    android:text="@string/password"
+                    android:textSize="20sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_identity_editText_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_mainbg"
+                    android:layout_weight="1"
+                    android:inputType="textPassword"
+                    android:text="alice"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/screen_identity_textView_realm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="2"
+                    android:text="Realm*"
+                    android:textSize="20sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/screen_identity_editText_realm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_mainbg"
+                    android:layout_weight="1"
+                    android:text="sip:open-ims.test"
+                    android:textSize="20sp" >
+                </TextView>
+            </LinearLayout>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+
+            <CheckBox
+                android:id="@+id/screen_identity_checkBox_earlyIMS"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                android:text="3GPP Early IMS Security"
+                android:textSize="20sp" >
+            </CheckBox>
+
+		    <View
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:background="@color/color_line1" />
+	        
+			<Button
+				android:id="@+id/screen_identity_button_exit"
+				android:layout_width="200dp"
+				android:layout_height="40dp"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="5dp"
+				android:padding="5dp"
+				android:textStyle="bold"
+				android:text="@string/change_identity"
+				android:textColor="@color/color_text2"
+				android:textSize="16sp"
+				android:background="@drawable/sel_textbutton_red"
+				android:layout_gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

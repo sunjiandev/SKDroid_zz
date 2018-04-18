@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/screen_presence_checkBox_enable_presence"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_presence" >
+        </CheckBox>
+
+        <RelativeLayout
+            android:id="@+id/screen_presence_relativeLayout_presence"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/screen_presence_checkBox_enable_presence"
+            android:layout_marginLeft="20px" >
+
+            <CheckBox
+                android:id="@+id/screen_presence_checkBox_rls"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/open_rls" >
+            </CheckBox>
+
+            <CheckBox
+                android:id="@+id/screen_presence_checkBox_partial_pub"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_checkBox_rls"
+                android:text="@string/open_publication" >
+            </CheckBox>
+
+            <Spinner
+                android:id="@+id/screen_presence_spinner_status"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_checkBox_partial_pub"
+                android:layout_marginRight="5dp" >
+            </Spinner>
+
+            <TextView
+                android:id="@+id/screen_presence_textView_freetext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_spinner_status"
+                android:text="@string/free_sms" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/screen_presence_editText_freetext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_textView_freetext"
+                android:layout_marginRight="5dp"
+                android:text="Hello world" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/screen_presence_textView_avatar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_editText_freetext"
+                android:text="Avatar"
+                android:visibility="invisible" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/screen_presence_imageView"
+                android:layout_width="40dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/screen_presence_textView_avatar"
+                android:src="@drawable/avatar_48"
+                android:visibility="invisible" >
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_presence_textView_avatar"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/screen_presence_imageView" >
+
+                <ImageButton
+                    android:id="@+id/screen_presence_imageButton_file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/screen_presence_imageButton_cam"
+                    android:src="@drawable/folder_movie_24"
+                    android:visibility="invisible" >
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/screen_presence_imageButton_cam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/webcam_24"
+                    android:visibility="invisible" >
+                </ImageButton>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

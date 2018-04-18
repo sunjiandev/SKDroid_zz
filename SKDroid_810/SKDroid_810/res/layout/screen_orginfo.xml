@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_mainbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/app_title_bg" >
+
+        <ImageView
+            android:id="@+id/screen_org_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/jiantou"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/screen_org_back"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/string_orginfo"
+            android:textColor="@color/color_mainbg"
+            android:textSize="22dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/screen_top"
+        android:background="@color/color_greybg"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:id="@+id/screen_tab_dialer_linearLayout_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+           >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp" >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/n_image_icon1" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon"
+                    android:paddingLeft="5dp"
+                    android:text="@string/dafault_org"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/zhanghao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/icon"
+                    android:padding="5dp"
+                    android:text="@string/account_with_colon"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_toRightOf="@id/zhanghao"
+                    android:padding="5dp"
+                    android:text="555566666"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_mainbg" >
+
+                <TextView
+                    android:id="@+id/org"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/brief"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/org"
+                    android:layout_marginBottom="20dp"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_greybg"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp" >
+
+                
+                <Button
+                    android:id="@+id/audiocall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                 
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/sel_textbutton_normal"
+                    android:text="@string/call_desc_group_audio"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="16sp" />
+                
+                <Button
+                    android:id="@+id/sms"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                       android:layout_below="@id/audiocall"
+                    android:background="@color/color_white"
+                    android:text="@string/call_btn_group_message"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="16sp" />
+
+                
+
+                <Button
+                    android:id="@+id/videocall"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@id/sms"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/color_white"
+                    android:text="@string/call_desc_group_video"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/members"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@id/videocall"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/color_white"
+                    android:text="@string/call_btn_group_members"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/setcurrentgroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@id/members"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/color_white"
+                    android:text="@string/call_btn_group_default_group"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

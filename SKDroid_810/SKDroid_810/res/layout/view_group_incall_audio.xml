@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_ga3" >
+
+    <RelativeLayout
+        android:id="@+id/ga_screen_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="3dp"
+        android:weightSum="8" >
+
+        <ImageView
+            android:id="@+id/ga_hangup"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/gv_power"
+            android:contentDescription="" />
+
+        <ImageView
+            android:id="@+id/iv_ming_or_mi_group_audio"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/ga_hangup"
+            android:background="@drawable/ic_mi" />
+
+        <TextView
+            android:id="@+id/ga_org_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily=""
+            android:gravity="center"
+            android:maxLines="1"
+            android:maxWidth="180dp"
+            android:text="18900005003"
+            android:textColor="@color/color_white"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/ga_hide"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/hide1" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ga_users_block"
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_below="@id/ga_screen_top"
+        android:layout_margin="10dip"
+        android:background="@drawable/ga_users"
+        android:orientation="vertical"
+        android:padding="12dp" >
+
+        <GridView
+            android:id="@+id/ga_users"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:horizontalSpacing="5dip"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="5dip" />
+
+        <RelativeLayout
+            android:id="@+id/users_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" >
+
+            <ImageView
+                android:id="@+id/users_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/pg" />
+
+            <TextView
+                android:id="@+id/ga_users_sum_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/users_sum"
+                android:text="1"
+                android:textColor="@color/color_white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ga_timer"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ga_users_block"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ga_timer_ground" >
+
+        <TextView
+            android:id="@+id/ptt_user_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/ptt_qiangzhan"
+            android:textColor="@color/color_text_n1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ptt_user_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/ptt_user_tag"
+            android:maxLines="1"
+            android:maxWidth="120dp"
+            android:text=""
+            android:textColor="@color/color_white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ga_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="4dp"
+            android:gravity="right"
+            android:text="00:00:00"
+            android:textColor="@color/color_text_n2"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ga_voice"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_below="@id/ga_timer"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ga_screen_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ga_voice"
+        android:background="@color/color_ga3" >
+
+        <ImageButton
+            android:id="@+id/ga_ptt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ptt_up"
+            android:contentDescription="@string/hangup" />
+
+        <ImageView
+            android:id="@+id/ga_light"
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_above="@id/ga_ptt"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ga_ptt"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/idle" />
+    </RelativeLayout>
+
+</RelativeLayout>

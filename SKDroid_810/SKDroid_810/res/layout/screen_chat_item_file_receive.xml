@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_greybg" >
+
+    <TextView
+        android:id="@+id/screen_chat_item_file_receive_textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="13dp"
+        android:gravity="center_horizontal"
+        android:text="Vendredi 25, 2001 8:09 PM"
+        android:textColor="@color/color_text5"
+        android:textSize="10sp"
+        android:textStyle="bold" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/screen_chat_item_file_receive_layoutleft"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/screen_chat_item_file_receive_textView_date"
+        android:layout_margin="3dp"
+        android:gravity="top"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/screen_chat_item_file_receive_iconleft"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaulticon"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/screen_chat_item_file_receive_msg_body_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/screen_chat_item_file_receive_textView_date"
+        android:layout_toLeftOf="@+id/screen_chat_item_file_receive_layout_right"
+        android:layout_toRightOf="@+id/screen_chat_item_file_receive_layoutleft"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/screen_chat_item_file_receive_textView_sender"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="11dp"
+            android:singleLine="true"
+            android:text="2222"
+            android:textColor="@color/color_text1"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/screen_chat_item_file_receive_msg_body_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/chat_bg1"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/screen_chat_item_file_receive_filename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="filename"
+                    android:minWidth="150dp"
+                    android:textColor="@color/color_titleblack"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/screen_chat_item_file_receive_file_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/screen_chat_item_file_receive_filename"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/sel_textbutton_green"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    android:text="@string/chat_file_open"
+                    android:textColor="@color/color_text2"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 为了文字多时的美观 -->
+
+    <LinearLayout
+        android:id="@+id/screen_chat_item_file_receive_layout_right"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/screen_chat_item_file_receive_textView_date"
+        android:layout_margin="3dp"
+        android:gravity="top"
+        android:visibility="invisible" >
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaulticon"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+</RelativeLayout>

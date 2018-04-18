@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5px" >
+
+        <CheckBox
+            android:id="@+id/screen_natt_checkBox_ice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_ice" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_natt_checkBox_hack_aor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_natt_checkBox_ice"
+            android:text="Hack the AoR" >
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/screen_natt_checkBox_stun"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_natt_checkBox_hack_aor"
+            android:text="@string/open_stun_server" 
+            android:visibility="gone">
+        </CheckBox>
+
+        <RelativeLayout
+            android:id="@+id/screen_natt_relativeLayout_stun"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_natt_checkBox_stun" >
+
+            <RadioGroup
+                android:id="@+id/screen_natt_radioGroup_stun"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="15px" >
+
+                <RadioButton
+                    android:id="@+id/screen_natt_radioButton_stun_disco"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_stun_server" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/screen_natt_radioButton_stun_set"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/use_stun_server" >
+                </RadioButton>
+
+                <RelativeLayout
+                    android:id="@+id/screen_natt_relativeLayout_stun_server"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <TextView
+                        android:id="@+id/screen_natt_textView_stun_server"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/server_address" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/screen_natt_editText_stun_server"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_textView_stun_server"
+                        android:text="numb.viagenie.ca" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/screen_natt_textView_stun_port"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_editText_stun_server"
+                        android:text="@string/server_ports" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/screen_natt_editText_stun_port"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/screen_natt_textView_stun_port"
+                        android:inputType="number"
+                        android:text="3478" >
+                    </EditText>
+                </RelativeLayout>
+            </RadioGroup>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

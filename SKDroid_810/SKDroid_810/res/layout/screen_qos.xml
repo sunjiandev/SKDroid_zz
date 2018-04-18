@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/screen_qos_textView_media"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:paddingLeft="2px"
+            android:text="@string/media"
+            android:textSize="20dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/screen_qos_textView_vsize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_media"
+            android:layout_marginLeft="10px"
+            android:background="@color/color_mainbg"
+            android:paddingTop="5px"
+            android:text="@string/video_format"
+            android:textColor="@color/color_titleblack"
+            android:textSize="16dp" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/screen_qos_Spinner_vsize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_vsize"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="5px" >
+        </Spinner>
+
+        <TextView
+            android:id="@+id/screen_qos_textView_videofps"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_Spinner_vsize"
+            android:layout_marginLeft="10px"
+            android:background="@color/color_mainbg"
+            android:paddingTop="5px"
+            android:text="@string/fps"
+            android:textColor="@color/color_titleblack"
+            android:textSize="16dp" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/screen_qos_editText_videofps"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_videofps"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="5px"
+            android:inputType="number"
+            android:text="15" >
+        </EditText>
+        
+         <TextView
+                android:id="@+id/screen_qos_textView_network_losepackets"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+            	android:paddingTop="5px"
+                android:layout_below="@+id/screen_qos_editText_videofps"
+                android:text="QOS(lost packets)"
+                android:textSize="16dp" 
+				android:background="@color/color_mainbg"
+            	android:textColor="@color/color_titleblack" >
+            </TextView>
+            <EditText
+                android:id="@+id/screen_qos_editText_networklosepackets"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_qos_textView_network_losepackets"
+                android:inputType="number"
+                android:text="25" 
+                android:layout_marginLeft="10px"
+            	android:layout_marginRight="5px" >
+            </EditText>
+
+        <TextView
+            android:id="@+id/screen_qos_textView_preconditions"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_editText_networklosepackets"
+            android:layout_marginTop="5px"
+            android:paddingLeft="2px"
+            android:paddingTop="5px"
+            android:text="@string/pre_deal"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="gone" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/screen_qos_textView_precond_strength"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_preconditions"
+            android:layout_marginLeft="10px"
+            android:paddingTop="5px"
+            android:text="@string/degree"
+            android:textSize="16dp"
+            android:visibility="gone" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/screen_qos_spinner_precond_strength"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_precond_strength"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="5px"
+            android:visibility="gone" >
+        </Spinner>
+
+        <TextView
+            android:id="@+id/screen_qos_textView_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_spinner_precond_strength"
+            android:layout_marginLeft="10px"
+            android:paddingTop="5px"
+            android:text="@string/type"
+            android:textSize="16dp"
+            android:visibility="gone" >
+        </TextView>
+
+        <Spinner
+            android:id="@+id/screen_qos_Spinner_precond_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_textView_type"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="5px"
+            android:visibility="gone" >
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/screen_qos_checkBox_sessiontimers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_Spinner_precond_type"
+            android:text="@string/open_session_counting"
+            android:visibility="gone" >
+        </CheckBox>
+
+        <RelativeLayout
+            android:id="@+id/screen_qos_relativeLayout_sessiontimers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/screen_qos_checkBox_sessiontimers"
+            android:layout_marginLeft="10px" >
+
+            <TextView
+                android:id="@+id/screen_qos_textView_stimeout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chaoshi"
+                android:textSize="16dp" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/screen_qos_editText_stimeout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_qos_textView_stimeout"
+                android:layout_marginRight="5px"
+                android:inputType="number"
+                android:text="90" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/screen_qos_textView_refresher"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_qos_editText_stimeout"
+                android:text="@string/refresh"
+                android:textSize="16dp" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/screen_qos_spinner_refresher"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/screen_qos_textView_refresher"
+                android:layout_marginRight="5px" >
+            </Spinner>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
