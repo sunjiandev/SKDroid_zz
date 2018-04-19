@@ -340,9 +340,9 @@ public class AVSingleAudioFragment extends BaseFragment implements
 			
 			MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
 			activityManager.getMemoryInfo(memoryInfo);
-			MyLog.d(TAG, "系统剩余可用内存"+(memoryInfo.availMem>>10)+"k");
+			MyLog.d(TAG, "系统剩余可用内存"+(memoryInfo.availMem>>10)/1024+"MB");
 			MyLog.d(TAG, "系统是否处于低内存运行"+memoryInfo.lowMemory);
-			MyLog.d(TAG, "当系统内存低于"+memoryInfo.threshold+"时看成是低内存运行");
+			MyLog.d(TAG, "当系统内存低于"+(memoryInfo.threshold)/(1024*1024)+"MB时看成是低内存运行");
 		}
 	}
 	

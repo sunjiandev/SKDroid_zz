@@ -74,6 +74,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 	public static final int MSG_S_ADHOC_REFRESH = 0X5003; // 自组网刷新
 	public static int mMobileNoLength = 16;
 	public static int mPwdLength = 16;
+	private static int REGISTER_COUNT;
 
 	// private Thread mTvOutThread;
 
@@ -254,6 +255,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 			case BaseSocketMessage.MSG_C_USER_REG: { // 用户注册
 				INgnSipService sipService = Engine.getInstance()
 						.getSipService();
+				REGISTER_COUNT+=1;
 				if (sipService == null) {
 					MyLog.d(TAG, "SipService is null");
 					return;
@@ -263,6 +265,12 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				if (cs != null && cs == ConnectionState.CONNECTING
 						&& sipService.getSipStack() != null) {
 					MyLog.d(TAG, "User is registing...");
+					if (REGISTER_COUNT>3) {
+						sipService.setRegistrationState(ConnectionState.TERMINATED);
+						sipService.getSipStack().stop();
+						REGISTER_COUNT = 0;
+					}
+					
 					return;
 				}
 

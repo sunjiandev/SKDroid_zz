@@ -204,6 +204,17 @@ public class NgnSipService extends NgnBaseService implements INgnSipService,
 		return ConnectionState.NONE;
 	}
 
+	/**
+	 * ÉèÖÃ×¢²áµÄ×´Ì¬
+	 * @param state
+	 */
+	@Override
+	public void setRegistrationState(ConnectionState state) {
+		if (mRegSession != null) {
+			mRegSession.setConnectionState(state);
+		}
+	}
+
 	@Override
 	public boolean isXcapEnabled() {
 		// TODO Auto-generated method stub
