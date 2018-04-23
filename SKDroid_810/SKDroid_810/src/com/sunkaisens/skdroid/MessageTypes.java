@@ -106,6 +106,11 @@ public class MessageTypes {
 	public static final String MSG_CONTACT_EVENT = "MSG_CONTACT_EVENT";
 
 	public static final String MSG_STACK_EVENT = "MSG_STACK_EVENT";
+	
+	/**
+	 * 翰迅版本内部版本号
+	 */
+	public static final String INNER_VERSION_CODE = "v2.03.00.85\r\n";
 
 	// GIS事件具体消息
 	/**
@@ -138,4 +143,8 @@ public class MessageTypes {
 	public static final int MSG_UNREG_INPROGRESS = 40006;
 
 	public static final int MSG_STACK_NEED_STOP = 40404;
+	
+	
+	
+	
 }

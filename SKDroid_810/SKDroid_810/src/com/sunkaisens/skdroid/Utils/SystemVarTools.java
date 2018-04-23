@@ -1490,8 +1490,8 @@ public class SystemVarTools {
 					contactListGlobalGroupAll);
 			count = contactListAllBus_containGlobalGroup.size();
 
-			// Log.e("",
-			// "getOrgContactAllBus2  contactListAllBus_containGlobalGroup 闁轰椒鍗抽崳锟�  "+count);
+			 MyLog.e(TAG,
+			 "getOrgContactAllBus2  contactListAllBus_containGlobalGroup 闁轰椒鍗抽崳锟�  "+count);
 
 			if (count == 0) {
 				data[0] = (byte) count;

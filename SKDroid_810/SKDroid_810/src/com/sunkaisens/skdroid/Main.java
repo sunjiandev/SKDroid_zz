@@ -208,6 +208,7 @@ public class Main extends ActivityGroup {
 		if (NgnApplication.isBhSocket()) {
 			Tools_data.writeVersion();
 		}
+		Tools_data.writeVersion(MessageTypes.INNER_VERSION_CODE);
 
 		// 记录用户初始配置的cscf host
 		INgnConfigurationService mConfigurationService = Engine.getInstance()

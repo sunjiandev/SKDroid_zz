@@ -569,7 +569,8 @@ public class NativeService extends NgnNativeService implements
 						&& GlobalVar.bADHocMode == false
 						&& ConnectivityManager.CONNECTIVITY_ACTION
 								.equals(action)) {
-					Log.d(TAG, "network state changed...bLogin: "+SystemVarTools.bLogin);
+					Log.d(TAG, "network state changed...bLogin: "
+							+ SystemVarTools.bLogin);
 
 					if (SystemVarTools.bLogin) {
 						if (ServiceRegiste.isNeedRedownloadContacts
@@ -580,10 +581,11 @@ public class NativeService extends NgnNativeService implements
 									.sendContactStatus(ServiceRegiste.NET_DOWNLOAD_CONTACTS);
 							ServiceRegiste.isNeedRedownloadContacts = false;
 						}
-					
-						String newIp = mEngine.getNetworkService().getLocalIP(false);
+
+						String newIp = mEngine.getNetworkService().getLocalIP(
+								false);
 						Log.d(TAG, "network state changed, newIp: " + newIp);
-						if(newIp != null && CrashHandler.isNetworkAvailable()) {
+						if (newIp != null && CrashHandler.isNetworkAvailable()) {
 							sipService.refrashRegiste();
 						}
 						if (!NgnStringUtils.isNullOrEmpty(GlobalVar.mCurrIp)
@@ -593,7 +595,7 @@ public class NativeService extends NgnNativeService implements
 							GlobalVar.mCurrIp = newIp;
 						}
 					}
-					
+
 				}
 
 				if (MessageTypes.MSG_CONTACT_EVENT.equals(action)) {
@@ -883,10 +885,12 @@ public class NativeService extends NgnNativeService implements
 				// }
 				SystemVarTools.avCallNotNumber++;
 
-				if (NgnAVSession.getSize() > 1) { // 只允许一个拨打进来,优先级一样。高优先级打低优先级会先收到Byte消息
+				if (NgnAVSession.getSize() > 1 && !GlobalSession.bSocketService) { // 只允许一个拨打进来,优先级一样。高优先级打低优先级会先收到Byte消息
 					final NgnAVSession avSession = NgnAVSession.getSession(args
 							.getSessionId());
 					if (avSession != null) {
+						MyLog.d(TAG,
+								"receive a new call but i have a call,i will hangup it");
 						mEngine.showAVCallNotNotif(R.drawable.phone_call_26);
 						avSession.hangUpCall();
 					}
@@ -906,9 +910,7 @@ public class NativeService extends NgnNativeService implements
 					MyLog.d(TAG, "args.getPhrase()=" + args.getPhrase());
 					if ((!"encryptcall".equals(args.getPhrase()))) // xunz++
 						mEngine.getSoundService().startRingTone();
-
 					ScreenAV.ispeoplePTT = true;
-
 				} else {
 					Log.e(TAG, String.format(
 							"Failed to find session with id = ",
@@ -1021,7 +1023,8 @@ public class NativeService extends NgnNativeService implements
 			// NgnInviteEventArgs.EXTRA_SIPCODE, (short) 0);
 
 			// if (NgnMediaType.isAudioType(mediaType)) { //
-			// 0: 487 poweroff 1:486 busy 2:404 notfound 3:480 Temporarily Unavailable 4:
+			// 0: 487 poweroff 1:486 busy 2:404 notfound 3:480 Temporarily
+			// Unavailable 4:
 			// invalid
 
 			short sipCode = intent.getShortExtra(
@@ -1192,7 +1195,7 @@ public class NativeService extends NgnNativeService implements
 				}
 				String content = (String) cpimMessage.getContent();
 
-				MyLog.d(TAG, "content--->"+content);
+				MyLog.d(TAG, "content--->" + content);
 				if (content != null && content.equals("NULL"))
 					content = null;
 				event.setContent(content);
@@ -1783,7 +1786,7 @@ public class NativeService extends NgnNativeService implements
 			ServiceRegiste.neededreset = false;
 
 			mEngine.getScreenService().clearScreenList();
-			//add by Gongle to get IP from DNS(appserver.test.com)
+			// add by Gongle to get IP from DNS(appserver.test.com)
 			SystemVarTools.changeDNSToIPAddr();
 
 			// 加载历史记录
@@ -1825,16 +1828,16 @@ public class NativeService extends NgnNativeService implements
 			break;
 		case REGISTRATION_NOK:
 			Log.d(TAG, "REGISTRATION_NOK");
-			if (SKDroid.sks_version != VERSION.SOCKET || !SKDroid.isl8848a_l1860())
-			{
+			if (SKDroid.sks_version != VERSION.SOCKET
+					|| !SKDroid.isl8848a_l1860()) {
 				ServiceContact.auidForPresence = "";
 				sipService.unRegister();
-				//ServiceRegiste.sendStackStatus(MessageTypes.MSG_STACK_NEED_STOP);
+				// ServiceRegiste.sendStackStatus(MessageTypes.MSG_STACK_NEED_STOP);
 				if (SystemVarTools.bLogin) {
 					ServiceRegiste.neededreset = true;
 					MyLog.d(TAG, "neededreset = true");
 				}
-				
+
 				ServiceRegiste.isNeedRedownloadContacts = true;
 				ServiceRegiste.sendRegStatus(MessageTypes.MSG_REG_NOK);
 				Intent tIntent = new Intent(MessageTypes.MSG_NET_EVENT);
@@ -1948,9 +1951,11 @@ public class NativeService extends NgnNativeService implements
 			break;
 		case SUBSCRIPTION_NOK:
 			short sipCode = args.getSipCode();
+
 			String toHeaderString = intent
 					.getStringExtra(NgnSubscriptionEventArgs.EXTRA_TO_HEADER);
 			MyLog.d(TAG, "sipCode = " + sipCode + ", to: " + toHeaderString);
+
 			if (sipCode == 481 && ServiceContact.auidForPresence != ""
 					&& sipService.getSipStack().isValid()) {
 				if (toHeaderString.contains("sip:rls@test.com")) {

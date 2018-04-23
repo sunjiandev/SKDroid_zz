@@ -284,7 +284,6 @@ public class NgnSubscriptionSession extends NgnSipSession {
 	public boolean subscribe() {
 		return mSession.subscribe();
 	}
-
 	public boolean unSubscribe() {
 		return mSession.unSubscribe();
 	}

@@ -327,7 +327,6 @@ public class ServiceSocketMode {
 												// SocketServer.sendMessage(new
 												// BaseSocketMessage(BaseSocketMessage.MSG_C_S_SMS_RESULT,
 												// data));
-
 								MyLog.i("ServiceSocketMode: type = "
 										+ BaseSocketMessage.MSG_C_S_SMS_RESULT,
 										"mobileNo = " + remoteParty
@@ -530,7 +529,6 @@ public class ServiceSocketMode {
 					}
 				}
 				if (NgnMediaType.isAudioVideoType(mediaType)) {
-
 					if (hungupTimer != null) {
 						hungupTimer.cancel();
 						hungupTimer.purge();
@@ -557,9 +555,12 @@ public class ServiceSocketMode {
 							}
 							// 闂傚倷绀侀幉锟犳偡閿曞倸鍨傞柛褎顨嗛弲鎼佹煟閿濆懏婀伴悗姘閵囧嫰骞橀崡鐐典紕闂佸憡鐟╃粻鏍蓟閻旇櫣鐭欓柛鏍ゅ墲鐎氱懓鈹戦悩娆忕У鐎氳绻濋悽闈涗沪闁搞劎鏁婚幃褔鎮滈崶銊ヮ伓?
 							// SocketServer.sendMessage(new BaseSocketMessage(
-							SocketServer.sendMessage(new BaseSocketMessage(
-									BaseSocketMessage.MSG_S_AUDIO_TERMINATED,
-									data));
+							if (NgnAVSession.getSize() < 1) {
+								SocketServer
+										.sendMessage(new BaseSocketMessage(
+												BaseSocketMessage.MSG_S_AUDIO_TERMINATED,
+												data));
+							}
 
 							MyLog.i("ServiceSocketMode: type = "
 									+ BaseSocketMessage.MSG_S_AUDIO_TERMINATED,
@@ -660,9 +661,17 @@ public class ServiceSocketMode {
 				break;
 
 			case INCOMING: {
+				MyLog.d(TAG, "sunjianyun" + args.getSessionId());
 				if (NgnAVSession.getSize() > 1) {
 					Log.d(TAG,
 							"INCOMING new call.But i am busy,i will not notify.");
+					NgnAVSession session = NgnAVSession.getSession(args
+							.getSessionId());
+					if (session != null) {
+						session.hangUpCall();
+						MyLog.d(TAG, "call sessicon is not only i will hangup"
+								+ args.getSessionId());
+					}
 					return;
 				}
 				final NgnAVSession avSession = NgnAVSession.getSession(args

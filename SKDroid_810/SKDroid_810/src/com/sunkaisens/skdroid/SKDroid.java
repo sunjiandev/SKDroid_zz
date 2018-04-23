@@ -38,7 +38,7 @@ public class SKDroid extends NgnApplication {
 	/**
 	 * 标记当前版本类型
 	 */
-	public final static VERSION sks_version = VERSION.NORMAL;
+	public final static VERSION sks_version = VERSION.SOCKET;
 
 	public SKDroid() {
 		MyLog.d(TAG, "SKDroid()");

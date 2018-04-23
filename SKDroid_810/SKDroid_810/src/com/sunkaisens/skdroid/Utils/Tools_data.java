@@ -16,6 +16,7 @@ import java.util.HashMap;
 import org.doubango.ngn.NgnApplication;
 import org.doubango.utils.MyLog;
 
+import com.sunkaisens.skdroid.Engine;
 import com.sunkaisens.skdroid.SKDroid;
 
 import android.R.integer;
@@ -220,6 +221,38 @@ public class Tools_data {
 			String version = SKDroid.getVersionName();
 			MyLog.d("VERSION", "VERSION = "+version);
 			fos = new FileOutputStream(file+"/version.txt");
+			fos.write(version.getBytes());
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			if(fos != null){
+				try {
+					fos.close();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		}
+	}
+public static void writeVersion(String version) {
+		
+		FileOutputStream fos = null;
+		
+		try {
+			String sdcardDir = Engine.getInstance().getStorageService().getSdcardDir();
+			MyLog.d(TAG, "sdcardDir:"+sdcardDir);
+			File file = new File(sdcardDir);
+			if(!file.exists()){
+				file.mkdir();
+			}
+			MyLog.d("VERSION", "VERSION = "+version);
+			fos = new FileOutputStream(file+"/inner_version.txt");
 			fos.write(version.getBytes());
 			fos.flush();
 			fos.close();
