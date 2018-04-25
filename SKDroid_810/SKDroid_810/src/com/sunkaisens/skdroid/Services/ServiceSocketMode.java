@@ -327,6 +327,7 @@ public class ServiceSocketMode {
 												// SocketServer.sendMessage(new
 												// BaseSocketMessage(BaseSocketMessage.MSG_C_S_SMS_RESULT,
 												// data));
+
 								MyLog.i("ServiceSocketMode: type = "
 										+ BaseSocketMessage.MSG_C_S_SMS_RESULT,
 										"mobileNo = " + remoteParty
@@ -529,6 +530,7 @@ public class ServiceSocketMode {
 					}
 				}
 				if (NgnMediaType.isAudioVideoType(mediaType)) {
+
 					if (hungupTimer != null) {
 						hungupTimer.cancel();
 						hungupTimer.purge();
@@ -555,7 +557,8 @@ public class ServiceSocketMode {
 							}
 							// 闂傚倷绀侀幉锟犳偡閿曞倸鍨傞柛褎顨嗛弲鎼佹煟閿濆懏婀伴悗姘閵囧嫰骞橀崡鐐典紕闂佸憡鐟╃粻鏍蓟閻旇櫣鐭欓柛鏍ゅ墲鐎氱懓鈹戦悩娆忕У鐎氳绻濋悽闈涗沪闁搞劎鏁婚幃褔鎮滈崶銊ヮ伓?
 							// SocketServer.sendMessage(new BaseSocketMessage(
-							if (NgnAVSession.getSize() < 1) {
+							if (NgnAVSession.getSize() == 0) {
+
 								SocketServer
 										.sendMessage(new BaseSocketMessage(
 												BaseSocketMessage.MSG_S_AUDIO_TERMINATED,
@@ -571,7 +574,6 @@ public class ServiceSocketMode {
 											+ (data[0] == 0 ? "0: local user hungup!"
 													: "1:remote user hungup!"));
 						}
-
 						// if (NgnMediaType.isVideoType(mediaType)) { //
 						// 闂備浇宕甸崰鎰版偡閵夈儙娑樷攽鐎ｃ劉鍋撻崒鐐查唶闁哄洨鍋熼鍥⒑缁嬫寧婀扮紒瀣浮閺佹捇鏁�?
 						if (mSessionType == SessionType.VideoCall) {
@@ -661,17 +663,9 @@ public class ServiceSocketMode {
 				break;
 
 			case INCOMING: {
-				MyLog.d(TAG, "sunjianyun" + args.getSessionId());
 				if (NgnAVSession.getSize() > 1) {
 					Log.d(TAG,
 							"INCOMING new call.But i am busy,i will not notify.");
-					NgnAVSession session = NgnAVSession.getSession(args
-							.getSessionId());
-					if (session != null) {
-						session.hangUpCall();
-						MyLog.d(TAG, "call sessicon is not only i will hangup"
-								+ args.getSessionId());
-					}
 					return;
 				}
 				final NgnAVSession avSession = NgnAVSession.getSession(args
@@ -680,7 +674,6 @@ public class ServiceSocketMode {
 				if (avSession != null) {
 					GlobalSession.avSession = avSession; //
 				}
-
 				if (GlobalSession.avSession == null) {
 					break;
 				}
@@ -998,6 +991,7 @@ public class ServiceSocketMode {
 
 				short sipCode = intent.getShortExtra(
 						NgnInviteEventArgs.EXTRA_SIPCODE, (short) 0);
+				MyLog.d(TAG, "sip_code:" + sipCode);
 				if (sipCode != NgnSipCode.sipCode_poweroff
 						&& sipCode != NgnSipCode.sipCode_busy
 						&& sipCode != NgnSipCode.sipCode_notfound
@@ -1064,6 +1058,8 @@ public class ServiceSocketMode {
 					Log.d("HX-0328", "GlobalVar.bADHocMode = true!!!!!!!!!");
 
 					adhocRingtone(context, intent);
+					MyLog.d(TAG, "fuck  isLocalHangUp1:"
+							+ SystemVarTools.isLocalHangUp1);
 
 				} else {
 					isConnected = false;
@@ -1072,6 +1068,8 @@ public class ServiceSocketMode {
 				}
 
 			}
+			SystemVarTools.isLocalHangUp1 = false;
+
 		} else if (NgnSubscriptionEventArgs.ACTION_SUBSCRIBTION_EVENT
 				.equals(action)) {
 			NgnSubscriptionEventArgs args = intent
@@ -2369,15 +2367,14 @@ public class ServiceSocketMode {
 	}
 
 	private void adhocRingtone(Context context, final Intent intent) {
-		Log.d("HX-0328", "------start ringtone-----");
-
-		if (!SystemVarTools.isLocalHangUp) {
+		Log.d("HX-0328", "------start ringtone-----"
+				+ SystemVarTools.isLocalHangUp1);
+		if (!SystemVarTools.isLocalHangUp1) {
 			Log.d("HX-0328", "------!isLocalHangUp-----");
 			if (mPlayer == null) {
 				mPlayer = MediaPlayer.create(context, R.raw.user_busy);
 			}
 			mPlayer.setOnCompletionListener(new OnCompletionListener() {
-
 				@Override
 				public void onCompletion(MediaPlayer arg0) {
 					Log.d("HX-0328", "------ringtone end-----");
@@ -2389,9 +2386,7 @@ public class ServiceSocketMode {
 					}
 				}
 			});
-
 			mPlayer.start();
-
 		} else {
 			Log.d("HX-0328", "------isLocalHangUp-----");
 			handleSipEvent(intent);

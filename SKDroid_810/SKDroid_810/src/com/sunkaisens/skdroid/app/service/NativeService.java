@@ -876,16 +876,13 @@ public class NativeService extends NgnNativeService implements
 			break;
 
 		case INCOMING:
-
 			if (NgnMediaType.isAudioVideoType(mediaType)) {
 				Log.d(TAG, "imcomCall 视频 / 语音");
-
 				// if(mCallTipsDialog != null && mCallTipsDialog.isShowing()){
 				// mCallTipsDialog.dismiss();
 				// }
 				SystemVarTools.avCallNotNumber++;
-
-				if (NgnAVSession.getSize() > 1 && !GlobalSession.bSocketService) { // 只允许一个拨打进来,优先级一样。高优先级打低优先级会先收到Byte消息
+				if (NgnAVSession.getSize() > 1) { // 只允许一个拨打进来,优先级一样。高优先级打低优先级会先收到Byte消息
 					final NgnAVSession avSession = NgnAVSession.getSession(args
 							.getSessionId());
 					if (avSession != null) {

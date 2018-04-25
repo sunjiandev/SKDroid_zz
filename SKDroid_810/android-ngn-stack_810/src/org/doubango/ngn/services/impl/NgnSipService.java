@@ -206,7 +206,6 @@ public class NgnSipService extends NgnBaseService implements INgnSipService,
 
 	/**
 	 * ÉèÖÃ×¢²áµÄ×´Ì¬
-	 * 
 	 * @param state
 	 */
 	@Override
@@ -1275,11 +1274,7 @@ public class NgnSipService extends NgnBaseService implements INgnSipService,
 				// Subscription
 				else if (((mySession = NgnSubscriptionSession
 						.getSession(sessionId)) != null)) {
-					String toUri = mySession.getToUri();
-					String fromUri = mySession.getFromUri();
 					mySession.setConnectionState(ConnectionState.CONNECTED);
-					MyLog.d(TAG, "Subscription ok fromUriand  toUri" + fromUri
-							+ "----" + toUri);
 					mSipService
 							.broadcastSubscriptionEvent(new NgnSubscriptionEventArgs(
 									sessionId,
@@ -1468,7 +1463,6 @@ public class NgnSipService extends NgnBaseService implements INgnSipService,
 				// Subscription
 				else if (((mySession = NgnSubscriptionSession
 						.getSession(sessionId)) != null)) {
-					MyLog.d(TAG, "Subscription message:" + message);
 					final String toHeader = message.getSipHeaderValue("t");
 					ConnectionState previousConnState = mySession
 							.getConnectionState();
@@ -1683,7 +1677,6 @@ public class NgnSipService extends NgnBaseService implements INgnSipService,
 					Log.e(TAG,
 							"NgnAVSession.getSize() 2 = "
 									+ NgnAVSession.getSize());
-
 					// sks add start
 					if (sessionType == twrap_media_type_t.twrap_media_audio)
 						avSession.setSessionType(SessionType.AudioCall);

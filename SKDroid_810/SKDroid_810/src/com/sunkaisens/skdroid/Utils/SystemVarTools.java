@@ -185,7 +185,7 @@ public class SystemVarTools {
 	private static SharedPreferences.Editor mSetCurrentGroupEditor;
 	//
 	public static boolean isLocalHangUp = false; // true/false
-													// 闁哄牜鍓氬┃锟藉箰閸屾稒绨氱�殿噯鎷烽柛蹇ユ嫹
+	public static boolean isLocalHangUp1 = false;				//此标记控制自组网回铃音，上面这个标记在响铃之前已经被反初始化，引发bug
 	//
 	public static boolean isLocalUnReg = false; // true/false
 												// 闁汇垹褰夌粭鐔煎礉闄囬拏瀣鐠哄搫绲洪悹褔顥撳▓鎴︽偨閵婏箑鐓曟繛澶堝姂閺�锟�

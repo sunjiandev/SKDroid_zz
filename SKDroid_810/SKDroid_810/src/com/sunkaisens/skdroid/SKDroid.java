@@ -38,13 +38,13 @@ public class SKDroid extends NgnApplication {
 	/**
 	 * 标记当前版本类型
 	 */
-	public final static VERSION sks_version = VERSION.SOCKET;
+	public final static VERSION sks_version = VERSION.NORMAL;
 
 	public SKDroid() {
 		MyLog.d(TAG, "SKDroid()");
 		GlobalVar.mMyPid = Process.myPid();
 		MyLog.d(TAG, "当前进程id:" + GlobalVar.mMyPid);
-		
+
 		if (sks_version == VERSION.SOCKET) {
 			GlobalSession.bSocketService = true;
 			GlobalSession.isSocketServicePath = true;
@@ -58,16 +58,16 @@ public class SKDroid extends NgnApplication {
 	public void onCreate() {
 		super.onCreate();
 		MyLog.d(TAG, "SKDroid onCreate");
-		
-		
-		  Runtime rt = Runtime.getRuntime();
-	        long maxMemory = rt.maxMemory();
-	        MyLog.e("MaxMemory:", Long.toString(maxMemory/(1024*1024)));
-	        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-	        
-	        MyLog.e("MemoryClass:", Long.toString(activityManager.getMemoryClass()));
-	        MyLog.e("LargeMemoryClass:", Long.toString(activityManager.getLargeMemoryClass()));
-		
+
+		Runtime rt = Runtime.getRuntime();
+		long maxMemory = rt.maxMemory();
+		MyLog.e("MaxMemory:", Long.toString(maxMemory / (1024 * 1024)));
+		ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+
+		MyLog.e("MemoryClass:", Long.toString(activityManager.getMemoryClass()));
+		MyLog.e("LargeMemoryClass:",
+				Long.toString(activityManager.getLargeMemoryClass()));
+
 		// 微信crash bug管理(bugly)
 		// CrashReport.initCrashReport(this, "900019236", false);
 

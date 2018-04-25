@@ -115,7 +115,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 	public void onSocketReceive(Context context, Intent intent) {
 		final String action = intent.getAction();
 		MyLog.i("ServerMsgReceiver: action=", action);
-		MyLog.d(TAG, "prient socket event :"+intent.getIntExtra("type", 0));
+		MyLog.d(TAG, "prient socket event :" + intent.getIntExtra("type", 0));
 		if (MESSAGE_SOCKET_INTENT.equals(action)) {
 			int type = intent.getIntExtra("type", 0);
 			switch (type) {
@@ -255,7 +255,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 			case BaseSocketMessage.MSG_C_USER_REG: { // 用户注册
 				INgnSipService sipService = Engine.getInstance()
 						.getSipService();
-				REGISTER_COUNT+=1;
+				REGISTER_COUNT += 1;
 				if (sipService == null) {
 					MyLog.d(TAG, "SipService is null");
 					return;
@@ -265,12 +265,13 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				if (cs != null && cs == ConnectionState.CONNECTING
 						&& sipService.getSipStack() != null) {
 					MyLog.d(TAG, "User is registing...");
-					if (REGISTER_COUNT>3) {
-						sipService.setRegistrationState(ConnectionState.TERMINATED);
+					if (REGISTER_COUNT > 3) {
+						sipService
+								.setRegistrationState(ConnectionState.TERMINATED);
 						sipService.getSipStack().stop();
 						REGISTER_COUNT = 0;
 					}
-					
+
 					return;
 				}
 
@@ -316,28 +317,34 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 					datanok[0] = 2; // 2 the user is not exist.
 					SocketServer.sendMessage(new BaseSocketMessage(
 							BaseSocketMessage.MSG_S_USER_REGRESULT, datanok));
-					MyLog.d(TAG, "type = "+BaseSocketMessage.MSG_S_USER_REGRESULT+"  The param is invalid.");
+					MyLog.d(TAG, "type = "
+							+ BaseSocketMessage.MSG_S_USER_REGRESULT
+							+ "  The param is invalid.");
 					return;
 				}
 				final String mobileNo = new String(mobileNobytes).trim();
-				
-				if(NgnStringUtils.isNullOrEmpty(mobileNo)){
+
+				if (NgnStringUtils.isNullOrEmpty(mobileNo)) {
 					byte[] datanok = new byte[1];
 					datanok[0] = 2; // 2 the user is not exist.
 					SocketServer.sendMessage(new BaseSocketMessage(
 							BaseSocketMessage.MSG_S_USER_REGRESULT, datanok));
-					MyLog.d(TAG, "type = "+BaseSocketMessage.MSG_S_USER_REGRESULT+"  data="+datanok[0]);
+					MyLog.d(TAG, "type = "
+							+ BaseSocketMessage.MSG_S_USER_REGRESULT
+							+ "  data=" + datanok[0]);
 					return;
 				}
-				if(!NgnStringUtils.isNumberic(mobileNo)){
+				if (!NgnStringUtils.isNumberic(mobileNo)) {
 					byte[] datanok = new byte[1];
 					datanok[0] = 2; // 2 the user is not exist.
 					SocketServer.sendMessage(new BaseSocketMessage(
 							BaseSocketMessage.MSG_S_USER_REGRESULT, datanok));
-					MyLog.d(TAG, "type = "+BaseSocketMessage.MSG_S_USER_REGRESULT+"  data="+datanok[0]);
+					MyLog.d(TAG, "type = "
+							+ BaseSocketMessage.MSG_S_USER_REGRESULT
+							+ "  data=" + datanok[0]);
 					return;
 				}
-				
+
 				byte[] pwdbytes = new byte[mPwdLength];
 				try {
 					System.arraycopy(data, mMobileNoLength + 6, pwdbytes, 0,
@@ -347,7 +354,9 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 					datanok[0] = 2; // 2 the user is not exist.
 					SocketServer.sendMessage(new BaseSocketMessage(
 							BaseSocketMessage.MSG_S_USER_REGRESULT, datanok));
-					MyLog.d(TAG, "type = "+BaseSocketMessage.MSG_S_USER_REGRESULT+"  the param is invalid.");
+					MyLog.d(TAG, "type = "
+							+ BaseSocketMessage.MSG_S_USER_REGRESULT
+							+ "  the param is invalid.");
 					e.printStackTrace();
 					return;
 				}
@@ -472,7 +481,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				MyLog.i("ServerMsgReceiver: type = "
 						+ BaseSocketMessage.MSG_C_USER_UNREG, "mobileNo = "
 						+ "" + "; message = " + "用户注销");
-				if(!SKDroid.isl8848a_l1860()){
+				if (!SKDroid.isl8848a_l1860()) {
 					System.exit(0);
 				}
 				// //用户尚未注册
@@ -686,19 +695,20 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 			case BaseSocketMessage.MSG_C_SET_CURRENTGROUP: { // 设置当前集群组
 				String groupNo = BCDTools.BCD2Str(intent
 						.getByteArrayExtra("data")); // 10字节压缩BCD码表示设置组呼组的号码
-				
-				if(groupNo.equals("") || !SystemVarTools.isGroupInContact(groupNo)){
+
+				if (groupNo.equals("")
+						|| !SystemVarTools.isGroupInContact(groupNo)) {
 					MyLog.d(TAG, "The groupNo is invalid.");
 					return;
 				}
-				
+
 				SystemVarTools.setCurrentGroup(groupNo);
 
 				MyLog.i("ServerMsgReceiver: type = "
 						+ BaseSocketMessage.MSG_C_SET_CURRENTGROUP,
 						"mobileNo = " + "" + "; message = " + "设置当前集群组 "
 								+ groupNo);
-				
+
 				// gzc
 				SocketServer.sendMessage(new BaseSocketMessage(
 						BaseSocketMessage.MSG_S_UPDATE_CURRENTGROUP, BCDTools
@@ -721,15 +731,13 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				MyLog.d(TAG, "receive audio call outgoing");
 				if (serviceAV == null) {
 					byte[] ret = new byte[1];
-						ret[0] = 4; // 4 is invalid
-						SocketServer.sendMessage(new BaseSocketMessage(
-								BaseSocketMessage.MSG_S_AUDIO_CALLFAILED, ret));
-						MyLog.i("ServerMsgReceiver: type = "
-								+ BaseSocketMessage.MSG_S_AUDIO_CALLFAILED,
-								"mobileNo = "
-										+ mobileNo
-										+ "; message = "
-										+ "user is not valid");
+					ret[0] = 4; // 4 is invalid
+					SocketServer.sendMessage(new BaseSocketMessage(
+							BaseSocketMessage.MSG_S_AUDIO_CALLFAILED, ret));
+					MyLog.i("ServerMsgReceiver: type = "
+							+ BaseSocketMessage.MSG_S_AUDIO_CALLFAILED,
+							"mobileNo = " + mobileNo + "; message = "
+									+ "user is not valid");
 				} else {
 					MyLog.i("ServerMsgReceiver: type = "
 							+ BaseSocketMessage.MSG_C_AUDIO_CALLOUT,
@@ -738,19 +746,21 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 
 			}
 				break;
-			case BaseSocketMessage.MSG_C_AUDIO_HANGUP: { //本机挂机
-				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession.getSessions();
-				if(mAVSessions == null){
+			case BaseSocketMessage.MSG_C_AUDIO_HANGUP: { // 本机挂机
+				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
+						.getSessions();
+				if (mAVSessions == null) {
 					MyLog.e(TAG, "No active session.");
 					return;
 				}
 				for (int i = 0; i < mAVSessions.size(); i++) {
-					NgnAVSession session = mAVSessions.getAt(i); 
-					if(session != null)
+					NgnAVSession session = mAVSessions.getAt(i);
+					if (session != null)
 						session.hangUpCall();
 				}
 
 				SystemVarTools.isLocalHangUp = true;
+				SystemVarTools.isLocalHangUp1 = true;
 
 				String localMobileNo = Engine
 						.getInstance()
@@ -760,19 +770,20 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 								NgnConfigurationEntry.DEFAULT_IDENTITY_DISPLAY_NAME);
 				MyLog.i("ServerMsgReceiver: type = "
 						+ BaseSocketMessage.MSG_C_AUDIO_HANGUP, "mobileNo = "
-						+ localMobileNo + "; message = " + "本机挂机");
+						+ localMobileNo + "; message = " + "locel hangup--"+SystemVarTools.isLocalHangUp1);
 			}
 				break;
 
-			case BaseSocketMessage.MSG_C_AUDIO_PICK: { //本机摘机
-				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession.getSessions();
-				if(mAVSessions == null){
+			case BaseSocketMessage.MSG_C_AUDIO_PICK: { // 本机摘机
+				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
+						.getSessions();
+				if (mAVSessions == null) {
 					MyLog.e(TAG, "No active session.");
 					return;
 				}
 				for (int i = 0; i < mAVSessions.size(); i++) {
-					NgnAVSession session = mAVSessions.getAt(i); 
-					if(session != null)
+					NgnAVSession session = mAVSessions.getAt(i);
+					if (session != null)
 						mAVSessions.getAt(i).acceptCall();
 				}
 
@@ -781,7 +792,6 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 						+ "" + "; message = " + "本机摘机");
 			}
 				break;
-
 
 			/**
 			 * 3.3.2. 视频业务
@@ -792,20 +802,26 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				try {
 					System.arraycopy(data, 0, mobileNobytes, 0, 10);
 				} catch (Exception e) {
-					MyLog.d(TAG, "type="+BaseSocketMessage.MSG_C_VIDEO_CALLOUT+"  The param is invalid.");
+					MyLog.d(TAG, "type="
+							+ BaseSocketMessage.MSG_C_VIDEO_CALLOUT
+							+ "  The param is invalid.");
 					e.printStackTrace();
 				}
 				String mobileNo = BCDTools.BCD2Str(mobileNobytes);
-				
-				if(NgnStringUtils.isNullOrEmpty(mobileNo)){
-					MyLog.d(TAG, "type="+BaseSocketMessage.MSG_C_VIDEO_CALLOUT+"  The mobileNo is null.");
+
+				if (NgnStringUtils.isNullOrEmpty(mobileNo)) {
+					MyLog.d(TAG, "type="
+							+ BaseSocketMessage.MSG_C_VIDEO_CALLOUT
+							+ "  The mobileNo is null.");
 					return;
 				}
-				if(!NgnStringUtils.isNumberic(mobileNo)){
-					MyLog.d(TAG, "type="+BaseSocketMessage.MSG_C_VIDEO_CALLOUT+"  The mobileNo is not number.");
+				if (!NgnStringUtils.isNumberic(mobileNo)) {
+					MyLog.d(TAG, "type="
+							+ BaseSocketMessage.MSG_C_VIDEO_CALLOUT
+							+ "  The mobileNo is not number.");
 					return;
 				}
-				
+
 				if (data[10] == 0) { // 0：视频通话
 					if (ServiceAV.makeCall(mobileNo, NgnMediaType.AudioVideo,
 							SessionType.VideoCall) == null) {
@@ -840,44 +856,57 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 									+ "; message = "
 									+ "MSG_C_VIDEO_CALLOUT 1: video callout for videoUamonitor."); // 视频呼出
 																									// 视频回传
-				}else {
+				} else {
 					MyLog.d(TAG, "The paramater byte[10] is invalid.");
 				}
 			}
 				break;
 
-			case BaseSocketMessage.MSG_C_VIDEO_HANGUP: { //本机挂机
-				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession.getSessions();
-				if(mAVSessions == null){
+			case BaseSocketMessage.MSG_C_VIDEO_HANGUP: { // 本机挂机
+				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
+						.getSessions();
+				if (mAVSessions == null) {
 					MyLog.e(TAG, "No active session.");
 					return;
 				}
 				for (int i = 0; i < mAVSessions.size(); i++) {
-					NgnAVSession session = mAVSessions.getAt(i); 
-					if(session != null){
+					NgnAVSession session = mAVSessions.getAt(i);
+					if (session != null) {
 						session.hangUpCall();
-						
+
 						SystemVarTools.isLocalHangUp = true;
-	
-						String localMobileNo = Engine.getInstance().getConfigurationService().getString(NgnConfigurationEntry.IDENTITY_DISPLAY_NAME, NgnConfigurationEntry.DEFAULT_IDENTITY_DISPLAY_NAME);
-						MyLog.i("ServerMsgReceiver: type = " + BaseSocketMessage.MSG_C_VIDEO_HANGUP, "mobileNo = " + localMobileNo + "; message = " + "本机挂机");
+						SystemVarTools.isLocalHangUp1 = true;
+
+						String localMobileNo = Engine
+								.getInstance()
+								.getConfigurationService()
+								.getString(
+										NgnConfigurationEntry.IDENTITY_DISPLAY_NAME,
+										NgnConfigurationEntry.DEFAULT_IDENTITY_DISPLAY_NAME);
+						MyLog.i("ServerMsgReceiver: type = "
+								+ BaseSocketMessage.MSG_C_VIDEO_HANGUP,
+								"mobileNo = " + localMobileNo + "; message = "
+										+ "本机挂机");
 					}
 				}
 			}
 				break;
 
-			case BaseSocketMessage.MSG_C_VIDEO_PICK: { //本机摘机
-				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession.getSessions();
-				if(mAVSessions == null){
+			case BaseSocketMessage.MSG_C_VIDEO_PICK: { // 本机摘机
+				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
+						.getSessions();
+				if (mAVSessions == null) {
 					MyLog.e(TAG, "No active session.");
 					return;
 				}
 				for (int i = 0; i < mAVSessions.size(); i++) {
-					NgnAVSession session = mAVSessions.getAt(i); 
-					if(session != null){
+					NgnAVSession session = mAVSessions.getAt(i);
+					if (session != null) {
 						session.acceptCall();
-						
-						MyLog.i("ServerMsgReceiver: type = " + BaseSocketMessage.MSG_C_VIDEO_PICK, "mobileNo = " + "" + "; message = " + "本机摘机");
+
+						MyLog.i("ServerMsgReceiver: type = "
+								+ BaseSocketMessage.MSG_C_VIDEO_PICK,
+								"mobileNo = " + "" + "; message = " + "本机摘机");
 					}
 				}
 			}
@@ -898,14 +927,15 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				} else {
 					MyLog.d(TAG, "当前未设置集群组");
 				}
-				
-				if(NgnAVSession.getSize() == 0){
+
+				if (NgnAVSession.getSize() == 0) {
 					ServiceAV.isPTTRejected = false;
-					MyLog.d(TAG, "sessionSeze = 0; isPTTRejected?"+ServiceAV.isPTTRejected);
+					MyLog.d(TAG, "sessionSeze = 0; isPTTRejected?"
+							+ ServiceAV.isPTTRejected);
 				}
-				MyLog.d(TAG, "isPTTRejected?"+ServiceAV.isPTTRejected);
-				MyLog.d(TAG, "AVSessionSize?"+NgnAVSession.getSize());
-				if (NgnAVSession.getSize() > 0 /*&& !ServiceAV.isPTTRejected*/) {
+				MyLog.d(TAG, "isPTTRejected?" + ServiceAV.isPTTRejected);
+				MyLog.d(TAG, "AVSessionSize?" + NgnAVSession.getSize());
+				if (NgnAVSession.getSize() > 0 /* && !ServiceAV.isPTTRejected */) {
 					NgnAVSession session = null;
 					if (ServiceAV.getLastServiceAV() != null) {
 						session = ServiceAV.getLastServiceAV().getAVSession();
@@ -950,15 +980,17 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				}
 
 				SystemVarTools.sleep(200);
-				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession.getSessions();
-				if(mAVSessions == null){
+				NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
+						.getSessions();
+				if (mAVSessions == null) {
 					MyLog.e(TAG, "No active session.");
 					return;
 				}
 				for (int i = 0; i < mAVSessions.size(); i++) {
-					NgnAVSession session = mAVSessions.getAt(i); 
-					if(session != null){
-						int sessionType_terminated = mAVSessions.getAt(i).getSessionType();
+					NgnAVSession session = mAVSessions.getAt(i);
+					if (session != null) {
+						int sessionType_terminated = mAVSessions.getAt(i)
+								.getSessionType();
 						if (sessionType_terminated == SessionType.GroupAudioCall
 								|| sessionType_terminated == SessionType.GroupVideoCall) {
 							session.hangUpCall();
@@ -1025,8 +1057,10 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				}
 				if (data[0] == 1) {
 					result = "失败";
-				}else {
-					MyLog.d(TAG, "type = "+BaseSocketMessage.MSG_C_S_SMS_RESULT+"   The param is invalid.");
+				} else {
+					MyLog.d(TAG, "type = "
+							+ BaseSocketMessage.MSG_C_S_SMS_RESULT
+							+ "   The param is invalid.");
 					return;
 				}
 				System.out.print("短消息发送结果-上行  = " + result);
@@ -1039,9 +1073,9 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				break;
 
 			case BaseSocketMessage.MSG_C_S_SMS_FORMAT: { // 短消息格式(上行)
-				
+
 				MyLog.e(TAG, "收到短信");
-				
+
 				byte[] data = intent.getByteArrayExtra("data");
 				// if(SKDroid.getVersionName().contains("soc_msg")){
 				byte[] mobile1Nobytes = new byte[10];
@@ -1054,7 +1088,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				// byte[] byteMessage = new byte[smsLen];
 				// System.arraycopy(data, 13, byteMessage, 0, smsLen);
 
-				int smsLen = data[21]&0xff;     //java采用补码，byte表示范围为-128-127，该行将byte变为0-255
+				int smsLen = data[21] & 0xff; // java采用补码，byte表示范围为-128-127，该行将byte变为0-255
 				byte[] byteMessage = new byte[smsLen];
 				System.arraycopy(data, 22, byteMessage, 0, smsLen);
 
@@ -1086,8 +1120,8 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 			 */
 			case BaseSocketMessage.MSG_C_ADHOC_LOGIN: { // 自组网注册
 				byte[] data = intent.getByteArrayExtra("data"); // 50Bytes
-				if(data == null || data.length != 32){
-					MyLog.d(TAG,"Data is invalid.");
+				if (data == null || data.length != 32) {
+					MyLog.d(TAG, "Data is invalid.");
 					return;
 				}
 				byte[] nameBytes = new byte[16];
@@ -1100,7 +1134,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 							.trim();
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
-				}catch (Exception e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				String account = null;
@@ -1110,33 +1144,36 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
 				}
-				if(account == null){
+				if (account == null) {
 					MyLog.e(TAG, "account is null.");
 					return;
 				}
-				if(name == null){
+				if (name == null) {
 					MyLog.d(TAG, "name is null.use account");
 					name = account;
 				}
 				GlobalVar.bADHocMode = true;
-				String myIP = Engine.getInstance().getNetworkService().getLocalIP(false);
+				String myIP = Engine.getInstance().getNetworkService()
+						.getLocalIP(false);
 				MyLog.d(TAG, "localIP = " + myIP);
-				if( myIP != null){
-					ServiceLoginAccount.getInstance().adhoc_Login(name, account);
+				if (myIP != null) {
+					ServiceLoginAccount.getInstance()
+							.adhoc_Login(name, account);
 
 					ServiceAdhoc.getInstance().StartAdhoc();
 
 					MyLog.i("ServerMsgReceiver: type = "
-							+ BaseSocketMessage.MSG_C_ADHOC_LOGIN, "name = " + name
-							+ "; account = " + account + "; message = " + "自组网注册");
-					
-				}
-				else{
+							+ BaseSocketMessage.MSG_C_ADHOC_LOGIN, "name = "
+							+ name + "; account = " + account + "; message = "
+							+ "自组网注册");
+
+				} else {
 					MyLog.i("ServerMsgReceiver: type = "
-							+ BaseSocketMessage.MSG_C_ADHOC_LOGIN, "name = " + name
-							+ "; account = " + account + "; message = " + "自组网注册, localip == null");
+							+ BaseSocketMessage.MSG_C_ADHOC_LOGIN, "name = "
+							+ name + "; account = " + account + "; message = "
+							+ "自组网注册, localip == null");
 				}
-				
+
 			}
 				break;
 
@@ -1250,6 +1287,12 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 				MyLog.i("ServerMsgReceiver: type = "
 						+ BaseSocketMessage.MSG_S_ALIVE_RES, "message = "
 						+ "发送心跳响应！");
+				// 此情况预防ServiceAdhoc自组网服务器没有开启
+				if (GlobalVar.bADHocMode) {
+					if (!ServiceAdhoc.getInstance().isStartOK()) {
+						ServiceAdhoc.getInstance().StartAdhoc();
+					}
+				}
 				break;
 			}
 			case BaseSocketMessage.MSG_S_GIS_RESPONSE: {
@@ -1332,8 +1375,8 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 		intent.putExtra("data", message.getData());
 
 		if (mSocketCallback != null) {
-			MyLog.d(TAG, "message.getType():"+message.getType());
-			MyLog.d(TAG, "message.getType():"+message.getData());
+			MyLog.d(TAG, "message.getType():" + message.getType());
+			MyLog.d(TAG, "message.getType():" + message.getData());
 			mSocketCallback.onSocketEvent(intent);
 		} else {
 			MyLog.d(TAG, "SocketCallback is NULL.");
@@ -1397,7 +1440,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 		NgnObservableHashMap<Long, NgnAVSession> mAVSessions = NgnAVSession
 				.getSessions();
 		for (int i = 0; i < mAVSessions.size(); i++) {
-			NgnAVSession session = mAVSessions.getAt(i); 
+			NgnAVSession session = mAVSessions.getAt(i);
 			if (session != null) {
 				return session.sendInfo(content, contentType);
 			}

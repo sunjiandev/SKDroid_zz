@@ -19,6 +19,9 @@
  */
 package org.doubango.ngn.sip;
 
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.doubango.ngn.NgnEngine;
 import org.doubango.ngn.services.INgnConfigurationService;
 import org.doubango.ngn.utils.NgnConfigurationEntry;
@@ -40,11 +43,12 @@ public class NgnSubscriptionSession extends NgnSipSession {
 
 	private final static NgnObservableHashMap<Long, NgnSubscriptionSession> sSessions = new NgnObservableHashMap<Long, NgnSubscriptionSession>(
 			true);
+	private static NgnSubscriptionSession xSession;
 
 	public static NgnSubscriptionSession createOutgoingSession(
 			NgnSipStack sipStack, String fromUri, String toUri,
 			EventPackageType eventPackage) {
-		if(sipStack==null || sipStack.isValid()==false){
+		if (sipStack == null || sipStack.isValid() == false) {
 			return null;
 		}
 		synchronized (sSessions) {
@@ -62,10 +66,24 @@ public class NgnSubscriptionSession extends NgnSipSession {
 			NgnSipStack sipStack, String fromUri, String toUri,
 			EventPackageType eventPackage, String auid) {
 		synchronized (sSessions) {
-			final NgnSubscriptionSession subSession = new NgnSubscriptionSession(
-					sipStack, fromUri, toUri, eventPackage, auid);
-			sSessions.put(subSession.getId(), subSession);
-			return subSession;
+
+			for (int i = 0; i < sSessions.size(); i++) {
+				NgnSubscriptionSession session = sSessions.getAt(i);
+				boolean contains = session.getToUri()
+						.equals("sip:rls@test.com");
+				if (contains) {
+					xSession = session;
+					break;
+				} else {
+					final NgnSubscriptionSession subSession = new NgnSubscriptionSession(
+							sipStack, fromUri, toUri, eventPackage, auid);
+					xSession = subSession;
+					sSessions.put(subSession.getId(), subSession);
+				}
+			}
+
+			return xSession;
+
 		}
 	}
 
@@ -284,6 +302,7 @@ public class NgnSubscriptionSession extends NgnSipSession {
 	public boolean subscribe() {
 		return mSession.subscribe();
 	}
+
 	public boolean unSubscribe() {
 		return mSession.unSubscribe();
 	}

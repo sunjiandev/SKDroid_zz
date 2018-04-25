@@ -79,6 +79,8 @@ public class ServiceAdhoc {
 	private static final String TAG = ServiceAdhoc.class.getCanonicalName();
 	public ConcurrentHashMap<String, SKSPerson> childrenMap = new ConcurrentHashMap<String, SKSPerson>();// 当前在线用户
 
+	private List<Map> backUpContact = new ArrayList<Map>();// 自组网联系人备份
+
 	private String localIp = null;
 	private static SKSPerson me = null;// 用来保存自身的相关信息
 	private AdhocCommunication adhocCom = null;// 通讯与协议解析模块
@@ -202,6 +204,8 @@ public class ServiceAdhoc {
 			adhocCom = null;
 		}
 
+		backUpContact.clear();
+
 		me = null;
 		instance = null;
 
@@ -240,7 +244,6 @@ public class ServiceAdhoc {
 			Log.d("", "logingTime= " + me.getLoginTime() + "--currentTime="
 					+ currentTime);
 		}
-
 	}
 
 	// 获得所有用户对象
@@ -257,10 +260,13 @@ public class ServiceAdhoc {
 		list.add(new NodeResource(me.getIpAddress(), me.getPersonNickeName(),
 				"sip:" + me.getMobileNo() + "@" + me.getIpAddress(), me
 						.getMobileNo(), me.isGroupLeader()));
-		if (childrenMap.size() > 0) {
-			Set<String> keys = childrenMap.keySet();
+		if (backUpContact.size() > 0) {
+			@SuppressWarnings("unchecked")
+			ConcurrentHashMap<String, SKSPerson> contactMap = (ConcurrentHashMap<String, SKSPerson>) backUpContact
+					.get(0);
+			Set<String> keys = contactMap.keySet();
 			for (String key : keys) {
-				SKSPerson person = childrenMap.get(key);
+				SKSPerson person = contactMap.get(key);
 				NodeResource nr = new NodeResource(person.getIpAddress(),
 						person.getPersonNickeName(), "sip:"
 								+ person.getMobileNo() + "@"
@@ -278,6 +284,14 @@ public class ServiceAdhoc {
 			while (!isStopUpdateMe) {
 				try {
 					adhocCom.joinOrganization();
+					if (!backUpContact.contains(childrenMap)) {// 5秒同步一次数据
+						backUpContact.clear();
+						backUpContact.add(childrenMap);
+						MyLog.d(TAG, "开始同步数据");
+					} else {
+						MyLog.d(TAG, "数据已经同步");
+					}
+
 					sleep(5000);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -799,7 +813,7 @@ public class ServiceAdhoc {
 			try {
 				DatagramSocket socketSend = new DatagramSocket();
 				me.setCmdType(cmdType);
-				
+
 				socketSend.setTrafficClass(0xb4);
 				MyLog.d(TAG, "get TOS: " + socketSend.getTrafficClass());
 				Log.d("ServiceAdhoc", "ServiceAdhoc - me = " + me.toString());
