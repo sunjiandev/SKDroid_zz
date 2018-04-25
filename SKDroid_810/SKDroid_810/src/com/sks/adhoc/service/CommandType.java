@@ -6,6 +6,8 @@ public class CommandType {
 	public static final String personOnLine = "com.sunkaisens.skdroid.personOnLine";
 	public static final String personOffLine = "com.sunkaisens.skdroid.personOffLine";
 	
+	public static final String mineOffLine = "mineOffLine";//自己下线广播
+	
 	public static final String SessionIncomming = "com.sunkaisens.skdroid.SessionIncomming";
 	public static final String SessionConnected = "com.sunkaisens.skdroid.SessionConnected";
 	public static final String SessionHungUp = "com.sunkaisens.skdroid.SessionHungUp";

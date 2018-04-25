@@ -770,7 +770,7 @@ public class ServerMsgReceiver implements SocketMsgReceiver {
 								NgnConfigurationEntry.DEFAULT_IDENTITY_DISPLAY_NAME);
 				MyLog.i("ServerMsgReceiver: type = "
 						+ BaseSocketMessage.MSG_C_AUDIO_HANGUP, "mobileNo = "
-						+ localMobileNo + "; message = " + "locel hangup--"+SystemVarTools.isLocalHangUp1);
+						+ localMobileNo + "; message = " + "±¾»ú¹Ò»ú");
 			}
 				break;
 

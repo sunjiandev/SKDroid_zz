@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TimerTask;
 import java.util.UUID;
@@ -775,8 +776,30 @@ public class ServiceAdhoc {
 					&& childrenMap.containsKey(person.getIpAddress())) {
 				// childrenMap.remove(person.personId);
 				// childrenMap.put(person.personId, person);
-				childrenMap.get(person.getIpAddress()).setHeartbeatTime(
-						System.currentTimeMillis());
+
+				for (Entry<String, SKSPerson> entry : childrenMap.entrySet()) {
+					String key = entry.getKey();
+					SKSPerson sksPerson = childrenMap.get(key);
+					MyLog.d("sunjianyun", "key---value----->" + key + "----"
+							+ sksPerson);
+
+					if (sksPerson.getIpAddress().equals(person.getIpAddress())
+							&& (!sksPerson.getPersonNickeName().equals(
+									person.getPersonNickeName()) || !sksPerson
+									.getMobileNo().equals(person.getMobileNo()))) {
+
+						MyLog.d("sunjianyun",
+								"user login again,but username is change");
+						childrenMap.put(person.getIpAddress(), person);
+						sendPersonHasChangedBroadcast(CommandType.personOnLine);
+						break;
+
+					} else {
+						childrenMap.get(person.getIpAddress())
+								.setHeartbeatTime(System.currentTimeMillis());
+					}
+				}
+
 			} else {
 				childrenMap.put(person.getIpAddress(), person);
 				sendPersonHasChangedBroadcast(CommandType.personOnLine);
